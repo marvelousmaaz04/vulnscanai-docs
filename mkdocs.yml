@@ -1,0 +1,10 @@
+site_name: VulnScanAI Documentation
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - VulnScanAI (App):
+      - Overview: app.md
+      - Scanners: scanners.md
+      - Views: views.md
