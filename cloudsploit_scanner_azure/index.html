@@ -1,0 +1,1647 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../prowler_scanner_gcp/">
+      
+      
+        <link rel="next" href="../views/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>CloudSploit Azure Scanner - VulnScanAI Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cloudsploit-azure-scanner" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="VulnScanAI Documentation" class="md-header__button md-logo" aria-label="VulnScanAI Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            VulnScanAI Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              CloudSploit Azure Scanner
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="VulnScanAI Documentation" class="md-nav__button md-logo" aria-label="VulnScanAI Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    VulnScanAI Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Table of Contents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    App Directory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            App Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Scanners Directory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Scanners Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scanners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nmap_scanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nmap Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../nikto_scanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nikto Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zap_scanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ZAP Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobsf_scanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MobSF Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sqlmap_scanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SQLMap Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ssl_scanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SSL Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prowler_scanner_aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prowler AWS Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../prowler_scanner_gcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prowler GCP Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    CloudSploit Azure Scanner
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    CloudSploit Azure Scanner
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-get_cloudsploit_report_directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. get_cloudsploit_report_directory()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-convert_csv_to_html_tablecsv_file_path-output_file_path" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. convert_csv_to_html_table(csv_file_path, output_file_path)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-convert_html_to_pdfhtml_path-pdf_path-logo_path-title" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. convert_html_to_pdf(html_path, pdf_path, logo_path, title)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-run_cloudsploit_scan_azureazure_subscription_id-azure_tenant_id-azure_client_id-azure_client_secret-user_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. run_cloudsploit_scan_azure(azure_subscription_id, azure_tenant_id, azure_client_id, azure_client_secret, user_id)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Considerations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Views Directory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Views Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      Functions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-get_cloudsploit_report_directory" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. get_cloudsploit_report_directory()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-convert_csv_to_html_tablecsv_file_path-output_file_path" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. convert_csv_to_html_table(csv_file_path, output_file_path)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-convert_html_to_pdfhtml_path-pdf_path-logo_path-title" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. convert_html_to_pdf(html_path, pdf_path, logo_path, title)
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-run_cloudsploit_scan_azureazure_subscription_id-azure_tenant_id-azure_client_id-azure_client_secret-user_id" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. run_cloudsploit_scan_azure(azure_subscription_id, azure_tenant_id, azure_client_id, azure_client_secret, user_id)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dependencies
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuration
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#error-handling" class="md-nav__link">
+    <span class="md-ellipsis">
+      Error Handling
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security-considerations" class="md-nav__link">
+    <span class="md-ellipsis">
+      Security Considerations
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download href="../pdf/combined.pdf" title="PDF Export"><svg style="height: 1.2rem; width: 1.2rem;" viewBox="0 0 384 512" xmlns="http://www.w3.org/2000/svg"><path d="M224 136V0H24C10.7 0 0 10.7 0 24v464c0 13.3 10.7 24 24 24h336c13.3 0 24-10.7 24-24V160H248c-13.2 0-24-10.8-24-24zm76.45 211.36l-96.42 95.7c-6.65 6.61-17.39 6.61-24.04 0l-96.42-95.7C73.42 337.29 80.54 320 94.82 320H160v-80c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v80h65.18c14.28 0 21.4 17.29 11.27 27.36zM377 105L279.1 7c-4.5-4.5-10.6-7-17-7H256v128h128v-6.1c0-6.3-2.5-12.4-7-16.9z"></path></svg></a>
+                
+                  
+
+
+
+<h1 id="cloudsploit-azure-scanner">CloudSploit Azure Scanner</h1>
+<p>This document details the functionality of the <code>cloudsploit_scanner_azure.py</code> script, which automates security assessments of Azure environments using CloudSploit. The script takes Azure subscription ID, tenant ID, client ID, client secret, and user ID as input, runs a CloudSploit scan, converts the generated CSV report to HTML and then PDF format, adds a company logo and title page, and returns the filename of the resulting PDF report.</p>
+<h2 id="overview">Overview</h2>
+<p>The script performs the following steps:</p>
+<ol>
+<li><strong>Receives Input:</strong> Takes Azure subscription ID, tenant ID, client ID, client secret, and user ID.</li>
+<li><strong>Executes CloudSploit:</strong> Runs the CloudSploit security assessment tool against the specified Azure environment, utilizing the provided credentials for authentication.</li>
+<li><strong>Converts CSV to HTML:</strong> Converts the generated CSV report into a basic HTML table format.</li>
+<li><strong>Converts HTML to PDF:</strong> Converts the generated HTML to a PDF format, adding a company logo and title page using <code>pdfkit</code> and <code>PyMuPDF</code>.</li>
+<li><strong>Returns Report Filename:</strong>  Returns the filename of the generated PDF report.</li>
+</ol>
+<h2 id="functions">Functions</h2>
+<h3 id="1-get_cloudsploit_report_directory">1. <code>get_cloudsploit_report_directory()</code></h3>
+<ul>
+<li>
+<p><strong>Purpose:</strong> Determines and creates the directory where CloudSploit Azure reports will be stored.</p>
+</li>
+<li>
+<p><strong>Functionality:</strong></p>
+<ul>
+<li>Defines the base directory path as <code>reports/cloud_audit/azure_reports</code> within the Flask application's root directory.</li>
+<li>Uses <code>os.makedirs(report_dir_base, exist_ok=True)</code> to create the directory if it doesn't exist.  <code>exist_ok=True</code> prevents errors if the directory already exists.</li>
+</ul>
+</li>
+<li>
+<p><strong>Code Snippet:</strong></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="k">def</span><span class="w"> </span><span class="nf">get_cloudsploit_report_directory</span><span class="p">():</span>
+</span><span id="__span-0-2">    <span class="n">report_dir_base</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">current_app</span><span class="o">.</span><span class="n">root_path</span><span class="p">,</span> <span class="s1">&#39;reports&#39;</span><span class="p">,</span> <span class="s1">&#39;cloud_audit&#39;</span><span class="p">,</span> <span class="s1">&#39;azure_reports&#39;</span><span class="p">)</span>
+</span><span id="__span-0-3">    <span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">report_dir_base</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-0-4">    <span class="k">return</span> <span class="n">report_dir_base</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+</ul>
+<h3 id="2-convert_csv_to_html_tablecsv_file_path-output_file_path">2. <code>convert_csv_to_html_table(csv_file_path, output_file_path)</code></h3>
+<ul>
+<li>
+<p><strong>Purpose:</strong> Converts a CSV file generated by CloudSploit into a simple HTML table.  It focuses on report data and removes any visual styling related to logos.</p>
+</li>
+<li>
+<p><strong>Functionality:</strong></p>
+<ul>
+<li>Reads the CSV file specified by <code>csv_file_path</code>.</li>
+<li>Extracts the header row from the CSV to create the HTML table headers (<code>&lt;th&gt;</code>).</li>
+<li>Iterates through the remaining rows in the CSV to create the HTML table data rows (<code>&lt;tr&gt;</code> and <code>&lt;td&gt;</code>).</li>
+<li>Wraps the generated table content in a basic HTML structure with minimal styling.</li>
+<li>Writes the complete HTML to the specified <code>output_file_path</code>.</li>
+<li>Returns the HTML content as a string.</li>
+<li>Includes a <code>try...except</code> block to handle potential file reading or processing errors.</li>
+</ul>
+</li>
+<li>
+<p><strong>Code Snippet:</strong></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
+</span><span id="__span-1-2">
+</span><span id="__span-1-3"><span class="k">def</span><span class="w"> </span><span class="nf">convert_csv_to_html_table</span><span class="p">(</span><span class="n">csv_file_path</span><span class="p">,</span> <span class="n">output_file_path</span><span class="p">):</span>
+</span><span id="__span-1-4">    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-1-5">        <span class="n">html_content</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-1-6"><span class="s2">        &lt;!DOCTYPE html&gt;</span>
+</span><span id="__span-1-7"><span class="s2">        &lt;html lang=&quot;en&quot;&gt;</span>
+</span><span id="__span-1-8"><span class="s2">        &lt;head&gt;</span>
+</span><span id="__span-1-9"><span class="s2">            &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+</span><span id="__span-1-10"><span class="s2">            &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span>
+</span><span id="__span-1-11"><span class="s2">            &lt;title&gt;CloudSploit Azure Scan Report&lt;/title&gt;</span>
+</span><span id="__span-1-12"><span class="s2">            &lt;style&gt;</span>
+</span><span id="__span-1-13"><span class="s2">                body </span><span class="se">{{</span>
+</span><span id="__span-1-14"><span class="s2">                    font-family: Arial, sans-serif;</span>
+</span><span id="__span-1-15"><span class="s2">                </span><span class="se">}}</span>
+</span><span id="__span-1-16"><span class="s2">                table </span><span class="se">{{</span>
+</span><span id="__span-1-17"><span class="s2">                    width: 100%;</span>
+</span><span id="__span-1-18"><span class="s2">                    border-collapse: collapse;</span>
+</span><span id="__span-1-19"><span class="s2">                    margin-top: 1rem;</span>
+</span><span id="__span-1-20"><span class="s2">                </span><span class="se">}}</span>
+</span><span id="__span-1-21"><span class="s2">                th, td </span><span class="se">{{</span>
+</span><span id="__span-1-22"><span class="s2">                    border: 1px solid #ddd;</span>
+</span><span id="__span-1-23"><span class="s2">                    padding: 8px;</span>
+</span><span id="__span-1-24"><span class="s2">                    text-align: left;</span>
+</span><span id="__span-1-25"><span class="s2">                </span><span class="se">}}</span>
+</span><span id="__span-1-26"><span class="s2">                th </span><span class="se">{{</span>
+</span><span id="__span-1-27"><span class="s2">                    background-color: #f0f0f0;</span>
+</span><span id="__span-1-28"><span class="s2">                </span><span class="se">}}</span>
+</span><span id="__span-1-29"><span class="s2">                tr:nth-child(even) </span><span class="se">{{</span>
+</span><span id="__span-1-30"><span class="s2">                    background-color: #f9f9f9;</span>
+</span><span id="__span-1-31"><span class="s2">                </span><span class="se">}}</span>
+</span><span id="__span-1-32"><span class="s2">            &lt;/style&gt;</span>
+</span><span id="__span-1-33"><span class="s2">        &lt;/head&gt;</span>
+</span><span id="__span-1-34"><span class="s2">        &lt;body&gt;</span>
+</span><span id="__span-1-35"><span class="s2">            &lt;div class=&quot;section&quot;&gt;</span>
+</span><span id="__span-1-36">
+</span><span id="__span-1-37"><span class="s2">                &lt;table&gt;</span>
+</span><span id="__span-1-38"><span class="s2">                    &lt;thead&gt;</span>
+</span><span id="__span-1-39"><span class="s2">                        &lt;tr&gt;</span>
+</span><span id="__span-1-40"><span class="s2">        &quot;&quot;&quot;</span>
+</span><span id="__span-1-41">        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">csv_file_path</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">newline</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">csvfile</span><span class="p">:</span>
+</span><span id="__span-1-42">            <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">csvfile</span><span class="p">)</span>
+</span><span id="__span-1-43">            <span class="n">header</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">reader</span><span class="p">)</span>  <span class="c1"># Get the header row</span>
+</span><span id="__span-1-44">            <span class="k">for</span> <span class="n">col</span> <span class="ow">in</span> <span class="n">header</span><span class="p">:</span>
+</span><span id="__span-1-45">                <span class="n">html_content</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;&lt;th&gt;</span><span class="si">{</span><span class="n">col</span><span class="si">}</span><span class="s1">&lt;/th&gt;&#39;</span>
+</span><span id="__span-1-46">            <span class="n">html_content</span> <span class="o">+=</span> <span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-1-47"><span class="s2">                        &lt;/tr&gt;</span>
+</span><span id="__span-1-48"><span class="s2">                    &lt;/thead&gt;</span>
+</span><span id="__span-1-49"><span class="s2">                    &lt;tbody&gt;</span>
+</span><span id="__span-1-50"><span class="s2">            &quot;&quot;&quot;</span>
+</span><span id="__span-1-51">            <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">reader</span><span class="p">:</span>
+</span><span id="__span-1-52">                <span class="n">html_content</span> <span class="o">+=</span> <span class="s2">&quot;&lt;tr&gt;&quot;</span>
+</span><span id="__span-1-53">                <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="p">:</span>
+</span><span id="__span-1-54">                    <span class="n">html_content</span> <span class="o">+=</span> <span class="sa">f</span><span class="s1">&#39;&lt;td&gt;</span><span class="si">{</span><span class="n">cell</span><span class="si">}</span><span class="s1">&lt;/td&gt;&#39;</span>
+</span><span id="__span-1-55">                <span class="n">html_content</span> <span class="o">+=</span> <span class="s2">&quot;&lt;/tr&gt;&quot;</span>
+</span><span id="__span-1-56">            <span class="n">html_content</span> <span class="o">+=</span> <span class="s2">&quot;&quot;&quot;</span>
+</span><span id="__span-1-57"><span class="s2">                    &lt;/tbody&gt;</span>
+</span><span id="__span-1-58"><span class="s2">                &lt;/table&gt;</span>
+</span><span id="__span-1-59"><span class="s2">            &lt;/div&gt;</span>
+</span><span id="__span-1-60"><span class="s2">        &lt;/body&gt;</span>
+</span><span id="__span-1-61"><span class="s2">        &lt;/html&gt;</span>
+</span><span id="__span-1-62"><span class="s2">        &quot;&quot;&quot;</span>
+</span><span id="__span-1-63">        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">output_file_path</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">&quot;utf-8&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-1-64">            <span class="n">f</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">html_content</span><span class="p">)</span>
+</span><span id="__span-1-65">        <span class="k">return</span> <span class="n">html_content</span>
+</span><span id="__span-1-66">    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span><span id="__span-1-67">        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Error converting CSV to HTML: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+</ul>
+<h3 id="3-convert_html_to_pdfhtml_path-pdf_path-logo_path-title">3. <code>convert_html_to_pdf(html_path, pdf_path, logo_path, title)</code></h3>
+<ul>
+<li>
+<p><strong>Purpose:</strong> Converts an HTML file to PDF, adds a company logo and title using <code>pdfkit</code> for the initial conversion and <code>PyMuPDF</code> for post-processing.</p>
+</li>
+<li>
+<p><strong>Functionality:</strong></p>
+<ul>
+<li><strong>HTML to PDF Conversion (pdfkit):</strong><ul>
+<li>Uses <code>pdfkit.from_file()</code> to convert the HTML file at <code>html_path</code> to a PDF file at <code>pdf_path</code>.</li>
+<li>Configures <code>pdfkit</code> with <code>wkhtmltopdf</code> executable path (defaults to <code>/usr/local/bin/wkhtmltopdf</code>).  <strong>Important:</strong> This path should be configurable or dynamically determined.</li>
+<li>Sets PDF options like page size, margins, encoding, and explicitly enables local file access to allow <code>wkhtmltopdf</code> to access local resources within the HTML (such as CSS or images).</li>
+</ul>
+</li>
+<li><strong>Post-Processing (PyMuPDF):</strong><ul>
+<li>Opens the generated PDF using <code>fitz.open()</code>.</li>
+<li>Loads the company logo from <code>logo_path</code> using <code>fitz.Pixmap()</code>. <code>logo_path</code> is joined with <code>current_app.root_path</code> to create an absolute path.</li>
+<li>If the logo file is present calculates the logo's dimensions and position to center it on the first and last page.</li>
+<li>Adds a new blank page at the beginning and the end of the PDF.</li>
+<li>Inserts the logo and the report title onto the added first and last page.</li>
+<li>Saves the modified PDF with incremental updates (<code>pdf_doc.saveIncr()</code>). This is crucial to preserve the original PDF content while adding the new elements.</li>
+</ul>
+</li>
+<li><strong>Error Handling:</strong> Uses <code>try...except</code> blocks to catch exceptions related to both <code>pdfkit</code> and <code>PyMuPDF</code> processes, ensuring proper error handling and reporting.  Raises the exception if the logo is not found after building the path.</li>
+</ul>
+</li>
+<li>
+<p><strong>Code Snippet:</strong></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="kn">import</span><span class="w"> </span><span class="nn">fitz</span>
+</span><span id="__span-2-2"><span class="kn">import</span><span class="w"> </span><span class="nn">pdfkit</span>
+</span><span id="__span-2-3"><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-2-4"><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">current_app</span>
+</span><span id="__span-2-5">
+</span><span id="__span-2-6"><span class="k">def</span><span class="w"> </span><span class="nf">convert_html_to_pdf</span><span class="p">(</span><span class="n">html_path</span><span class="p">,</span> <span class="n">pdf_path</span><span class="p">,</span> <span class="n">logo_path</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+</span><span id="__span-2-7"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-2-8"><span class="sd">    Converts an HTML file to a PDF using pdfkit and adds a logo and title to the first and last pages.</span>
+</span><span id="__span-2-9">
+</span><span id="__span-2-10"><span class="sd">    Args:</span>
+</span><span id="__span-2-11"><span class="sd">        html_path (str): The path to the HTML file.</span>
+</span><span id="__span-2-12"><span class="sd">        pdf_path (str): The path to save the generated PDF file.</span>
+</span><span id="__span-2-13"><span class="sd">        logo_path (str): Path to the company logo image (relative to the Flask app).</span>
+</span><span id="__span-2-14"><span class="sd">        title (str): The title/report type to display on the cover page (e.g., &quot;CloudSploit Azure Audit Report&quot;).</span>
+</span><span id="__span-2-15"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-2-16">    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-2-17">        <span class="c1"># Configure pdfkit to point to the wkhtmltopdf executable</span>
+</span><span id="__span-2-18">        <span class="n">config</span> <span class="o">=</span> <span class="n">pdfkit</span><span class="o">.</span><span class="n">configuration</span><span class="p">(</span><span class="n">wkhtmltopdf</span><span class="o">=</span><span class="s1">&#39;/usr/local/bin/wkhtmltopdf&#39;</span><span class="p">)</span>  <span class="c1"># Update this path if necessary</span>
+</span><span id="__span-2-19">
+</span><span id="__span-2-20">        <span class="c1"># Convert HTML file to PDF</span>
+</span><span id="__span-2-21">        <span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-2-22">            <span class="s1">&#39;page-size&#39;</span><span class="p">:</span> <span class="s1">&#39;A4&#39;</span><span class="p">,</span>
+</span><span id="__span-2-23">            <span class="s1">&#39;margin-top&#39;</span><span class="p">:</span> <span class="s1">&#39;10mm&#39;</span><span class="p">,</span>
+</span><span id="__span-2-24">            <span class="s1">&#39;margin-right&#39;</span><span class="p">:</span> <span class="s1">&#39;10mm&#39;</span><span class="p">,</span>
+</span><span id="__span-2-25">            <span class="s1">&#39;margin-bottom&#39;</span><span class="p">:</span> <span class="s1">&#39;10mm&#39;</span><span class="p">,</span>
+</span><span id="__span-2-26">            <span class="s1">&#39;margin-left&#39;</span><span class="p">:</span> <span class="s1">&#39;10mm&#39;</span><span class="p">,</span>
+</span><span id="__span-2-27">            <span class="s1">&#39;encoding&#39;</span><span class="p">:</span> <span class="s2">&quot;UTF-8&quot;</span><span class="p">,</span>
+</span><span id="__span-2-28">            <span class="s1">&#39;enable-local-file-access&#39;</span><span class="p">:</span> <span class="s1">&#39;&#39;</span>
+</span><span id="__span-2-29">        <span class="p">}</span>
+</span><span id="__span-2-30">        <span class="n">pdfkit</span><span class="o">.</span><span class="n">from_file</span><span class="p">(</span><span class="n">html_path</span><span class="p">,</span> <span class="n">pdf_path</span><span class="p">,</span> <span class="n">configuration</span><span class="o">=</span><span class="n">config</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">options</span><span class="p">)</span>
+</span><span id="__span-2-31">        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Successfully created PDF: </span><span class="si">{</span><span class="n">pdf_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-2-32">
+</span><span id="__span-2-33">    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span><span id="__span-2-34">        <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Error converting HTML to PDF using pdfkit: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-2-35">        <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</span><span id="__span-2-36">        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span> <span class="c1"># Re-raise to signal failure</span>
+</span><span id="__span-2-37">
+</span><span id="__span-2-38">    <span class="c1"># Add logo and title using PyMuPDF</span>
+</span><span id="__span-2-39">    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-2-40">        <span class="n">pdf_doc</span> <span class="o">=</span> <span class="n">fitz</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">pdf_path</span><span class="p">)</span>
+</span><span id="__span-2-41">        <span class="n">logo_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">current_app</span><span class="o">.</span><span class="n">root_path</span><span class="p">,</span> <span class="n">logo_path</span><span class="p">)</span>  <span class="c1"># Absolute Path from Relative Path</span>
+</span><span id="__span-2-42">        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">logo_path</span><span class="p">):</span>
+</span><span id="__span-2-43">            <span class="n">logo</span> <span class="o">=</span> <span class="n">fitz</span><span class="o">.</span><span class="n">Pixmap</span><span class="p">(</span><span class="n">logo_path</span><span class="p">)</span>
+</span><span id="__span-2-44">            <span class="n">logo_width_pt</span> <span class="o">=</span> <span class="mi">200</span>  <span class="c1"># Adjust as needed</span>
+</span><span id="__span-2-45">            <span class="n">aspect_ratio</span> <span class="o">=</span> <span class="n">logo</span><span class="o">.</span><span class="n">width</span> <span class="o">/</span> <span class="n">logo</span><span class="o">.</span><span class="n">height</span>
+</span><span id="__span-2-46">            <span class="n">logo_height_pt</span> <span class="o">=</span> <span class="n">logo_width_pt</span> <span class="o">/</span> <span class="n">aspect_ratio</span>
+</span><span id="__span-2-47">
+</span><span id="__span-2-48">            <span class="c1"># Create a new page as the first page</span>
+</span><span id="__span-2-49">            <span class="n">new_page</span> <span class="o">=</span> <span class="n">pdf_doc</span><span class="o">.</span><span class="n">new_page</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">pdf_doc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">pdf_doc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">height</span><span class="p">,</span>
+</span><span id="__span-2-50">                                            <span class="n">pno</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>  <span class="c1"># Insert as the *first* page</span>
+</span><span id="__span-2-51">            <span class="n">page_width</span> <span class="o">=</span> <span class="n">new_page</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">width</span>
+</span><span id="__span-2-52">            <span class="n">page_height</span> <span class="o">=</span> <span class="n">new_page</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">height</span>
+</span><span id="__span-2-53">
+</span><span id="__span-2-54">            <span class="c1"># Calculate total height of logo and title with gap</span>
+</span><span id="__span-2-55">            <span class="n">font_size</span> <span class="o">=</span> <span class="mi">24</span>
+</span><span id="__span-2-56">            <span class="n">text_height</span> <span class="o">=</span> <span class="n">font_size</span>  <span class="c1"># Approximate text height</span>
+</span><span id="__span-2-57">
+</span><span id="__span-2-58">            <span class="n">total_height</span> <span class="o">=</span> <span class="n">logo_height_pt</span> <span class="o">+</span> <span class="mi">30</span> <span class="o">+</span> <span class="n">text_height</span>  <span class="c1"># Logo + gap + title</span>
+</span><span id="__span-2-59">
+</span><span id="__span-2-60">            <span class="c1"># Calculate starting Y position for vertical centering</span>
+</span><span id="__span-2-61">            <span class="n">start_y</span> <span class="o">=</span> <span class="p">(</span><span class="n">page_height</span> <span class="o">-</span> <span class="n">total_height</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+</span><span id="__span-2-62">
+</span><span id="__span-2-63">            <span class="c1"># Calculate logo position (centered horizontally, vertically aligned)</span>
+</span><span id="__span-2-64">            <span class="n">logo_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">page_width</span> <span class="o">-</span> <span class="n">logo_width_pt</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+</span><span id="__span-2-65">            <span class="n">logo_y</span> <span class="o">=</span> <span class="n">start_y</span>  <span class="c1"># Distance from the top</span>
+</span><span id="__span-2-66">
+</span><span id="__span-2-67">            <span class="n">logo_rect</span> <span class="o">=</span> <span class="n">fitz</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">logo_x</span><span class="p">,</span> <span class="n">logo_y</span><span class="p">,</span> <span class="n">logo_x</span> <span class="o">+</span> <span class="n">logo_width_pt</span><span class="p">,</span> <span class="n">logo_y</span> <span class="o">+</span> <span class="n">logo_height_pt</span><span class="p">)</span>
+</span><span id="__span-2-68">            <span class="n">new_page</span><span class="o">.</span><span class="n">insert_image</span><span class="p">(</span><span class="n">logo_rect</span><span class="p">,</span> <span class="n">pixmap</span><span class="o">=</span><span class="n">logo</span><span class="p">)</span>
+</span><span id="__span-2-69">
+</span><span id="__span-2-70">            <span class="c1"># Add a title (optional)</span>
+</span><span id="__span-2-71">
+</span><span id="__span-2-72">            <span class="n">text_width</span> <span class="o">=</span> <span class="n">fitz</span><span class="o">.</span><span class="n">get_text_length</span><span class="p">(</span><span class="n">title</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s2">&quot;helvetica-bold&quot;</span><span class="p">,</span>
+</span><span id="__span-2-73">                                                <span class="n">fontsize</span><span class="o">=</span><span class="n">font_size</span><span class="p">)</span>  <span class="c1"># Use the get_text_length for exact positioning</span>
+</span><span id="__span-2-74">            <span class="n">text_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">page_width</span> <span class="o">-</span> <span class="n">text_width</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+</span><span id="__span-2-75">            <span class="n">text_y</span> <span class="o">=</span> <span class="n">logo_y</span> <span class="o">+</span> <span class="n">logo_height_pt</span> <span class="o">+</span> <span class="mi">30</span>  <span class="c1"># Below the logo</span>
+</span><span id="__span-2-76">            <span class="n">new_page</span><span class="o">.</span><span class="n">insert_text</span><span class="p">((</span><span class="n">text_x</span><span class="p">,</span> <span class="n">text_y</span><span class="p">),</span> <span class="n">title</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s2">&quot;helvetica-bold&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">font_size</span><span class="p">,</span>
+</span><span id="__span-2-77">                                    <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>  <span class="c1"># Black text</span>
+</span><span id="__span-2-78">
+</span><span id="__span-2-79">            <span class="c1"># Add the same page to the end of the document</span>
+</span><span id="__span-2-80">            <span class="n">last_page</span> <span class="o">=</span> <span class="n">pdf_doc</span><span class="o">.</span><span class="n">new_page</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="n">pdf_doc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">width</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="n">pdf_doc</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">rect</span><span class="o">.</span><span class="n">height</span><span class="p">)</span>  <span class="c1"># Create new page with the same height and width with original file</span>
+</span><span id="__span-2-81">            <span class="n">logo_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">page_width</span> <span class="o">-</span> <span class="n">logo_width_pt</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+</span><span id="__span-2-82">            <span class="n">logo_y</span> <span class="o">=</span> <span class="n">start_y</span>  <span class="c1"># Distance from the top</span>
+</span><span id="__span-2-83">
+</span><span id="__span-2-84">            <span class="n">logo_rect</span> <span class="o">=</span> <span class="n">fitz</span><span class="o">.</span><span class="n">Rect</span><span class="p">(</span><span class="n">logo_x</span><span class="p">,</span> <span class="n">logo_y</span><span class="p">,</span> <span class="n">logo_x</span> <span class="o">+</span> <span class="n">logo_width_pt</span><span class="p">,</span> <span class="n">logo_y</span> <span class="o">+</span> <span class="n">logo_height_pt</span><span class="p">)</span>
+</span><span id="__span-2-85">            <span class="n">last_page</span><span class="o">.</span><span class="n">insert_image</span><span class="p">(</span><span class="n">logo_rect</span><span class="p">,</span> <span class="n">pixmap</span><span class="o">=</span><span class="n">logo</span><span class="p">)</span>  <span class="c1"># insert the logo to the last page</span>
+</span><span id="__span-2-86">
+</span><span id="__span-2-87">            <span class="n">text_x</span> <span class="o">=</span> <span class="p">(</span><span class="n">page_width</span> <span class="o">-</span> <span class="n">text_width</span><span class="p">)</span> <span class="o">/</span> <span class="mi">2</span>
+</span><span id="__span-2-88">            <span class="n">text_y</span> <span class="o">=</span> <span class="n">logo_y</span> <span class="o">+</span> <span class="n">logo_height_pt</span> <span class="o">+</span> <span class="mi">30</span>  <span class="c1"># Below the logo</span>
+</span><span id="__span-2-89">            <span class="n">last_page</span><span class="o">.</span><span class="n">insert_text</span><span class="p">((</span><span class="n">text_x</span><span class="p">,</span> <span class="n">text_y</span><span class="p">),</span> <span class="n">title</span><span class="p">,</span> <span class="n">fontname</span><span class="o">=</span><span class="s2">&quot;helvetica-bold&quot;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">font_size</span><span class="p">,</span>
+</span><span id="__span-2-90">                                    <span class="n">color</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>  <span class="c1"># Black text #insert the text to the last page</span>
+</span><span id="__span-2-91">
+</span><span id="__span-2-92">            <span class="n">pdf_doc</span><span class="o">.</span><span class="n">saveIncr</span><span class="p">()</span>
+</span><span id="__span-2-93">            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Successfully added new page and logo to PDF: </span><span class="si">{</span><span class="n">pdf_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-2-94">
+</span><span id="__span-2-95">        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-2-96">            <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Warning: Logo not found at </span><span class="si">{</span><span class="n">logo_path</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-2-97">            <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</span><span id="__span-2-98">            <span class="k">raise</span> <span class="ne">FileNotFoundError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</span><span id="__span-2-99">
+</span><span id="__span-2-100">    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span><span id="__span-2-101">        <span class="n">msg</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Error adding new page and logo to PDF: </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-2-102">        <span class="nb">print</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+</span><span id="__span-2-103">        <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>  <span class="c1"># Re-raise the exception</span>
+</span><span id="__span-2-104">
+</span><span id="__span-2-105">    <span class="k">return</span> <span class="kc">True</span>  <span class="c1"># Indicate success</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+</ul>
+<h3 id="4-run_cloudsploit_scan_azureazure_subscription_id-azure_tenant_id-azure_client_id-azure_client_secret-user_id">4. <code>run_cloudsploit_scan_azure(azure_subscription_id, azure_tenant_id, azure_client_id, azure_client_secret, user_id)</code></h3>
+<ul>
+<li>
+<p><strong>Purpose:</strong> Orchestrates the entire CloudSploit Azure scanning process.</p>
+</li>
+<li>
+<p><strong>Functionality:</strong></p>
+<ul>
+<li><strong>Setup:</strong><ul>
+<li>Generates unique filenames for CSV, HTML and PDF reports based on the user ID and a timestamp.</li>
+<li>Defines paths for the reports, credentials file and company logo.</li>
+<li>Creates a JSON file containing Azure credentials, which CloudSploit uses for authentication.</li>
+</ul>
+</li>
+<li><strong>CloudSploit Execution:</strong><ul>
+<li>Constructs the CloudSploit command using <code>subprocess.run</code>. Key arguments include:<ul>
+<li><code>node</code>:  The NodeJS runtime.</li>
+<li><code>os.path.join(cloudsploit_dir, 'index.js')</code>:  Path to the CloudSploit entry point.</li>
+<li><code>--cloud azure</code>: Specifies the Azure assessment.</li>
+<li><code>--config</code>:  Specifies the path to the CloudSploit config file.</li>
+<li><code>--console none</code>:  Disables console output.</li>
+<li><code>--csv</code>: The path to the output CSV report.</li>
+<li><code>--ignore-ok</code>:  Instructs CloudSploit to ignore certain "OK" results.</li>
+</ul>
+</li>
+<li>Executes the CloudSploit command and captures its output.</li>
+<li>Checks the return code of the <code>subprocess.run</code> call. A non-zero return code indicates an error.</li>
+<li>Verify if the csv report is generated after the scan or not.</li>
+</ul>
+</li>
+<li><strong>Report Processing:</strong><ul>
+<li>Calls <code>convert_csv_to_html_table()</code> to convert the CSV report to HTML.</li>
+</ul>
+</li>
+<li><strong>PDF Conversion:</strong><ul>
+<li>Calls <code>convert_html_to_pdf()</code> to convert the HTML to a PDF report, adding the company logo and title.</li>
+</ul>
+</li>
+<li><strong>Cleanup:</strong><ul>
+<li>Deletes the Azure credentials file.</li>
+<li>Deletes the CSV and HTML report files.</li>
+</ul>
+</li>
+<li><strong>Error Handling:</strong>  Includes extensive error handling for file operations, CloudSploit execution, and report conversion. Returns specific error messages to the caller if any step fails.</li>
+</ul>
+</li>
+<li>
+<p><strong>Code Snippet:</strong></p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span>
+<span class="normal">90</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="kn">import</span><span class="w"> </span><span class="nn">subprocess</span>
+</span><span id="__span-3-2"><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-3-3"><span class="kn">from</span><span class="w"> </span><span class="nn">datetime</span><span class="w"> </span><span class="kn">import</span> <span class="n">datetime</span>
+</span><span id="__span-3-4"><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">current_app</span>
+</span><span id="__span-3-5"><span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
+</span><span id="__span-3-6"><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+</span><span id="__span-3-7">
+</span><span id="__span-3-8"><span class="k">def</span><span class="w"> </span><span class="nf">run_cloudsploit_scan_azure</span><span class="p">(</span><span class="n">azure_subscription_id</span><span class="p">,</span> <span class="n">azure_tenant_id</span><span class="p">,</span> <span class="n">azure_client_id</span><span class="p">,</span> <span class="n">azure_client_secret</span><span class="p">,</span> <span class="n">user_id</span><span class="p">):</span>
+</span><span id="__span-3-9">    <span class="n">report_dir</span> <span class="o">=</span> <span class="n">get_cloudsploit_report_directory</span><span class="p">()</span>
+</span><span id="__span-3-10">    <span class="n">cloudsploit_dir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">current_app</span><span class="o">.</span><span class="n">root_path</span><span class="p">),</span> <span class="s1">&#39;cloudsploit&#39;</span><span class="p">)</span>
+</span><span id="__span-3-11">    <span class="n">timestamp</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span><span class="o">.</span><span class="n">strftime</span><span class="p">(</span><span class="s2">&quot;%Y%m</span><span class="si">%d</span><span class="s2">_%H%M%S&quot;</span><span class="p">)</span>
+</span><span id="__span-3-12">    <span class="n">report_base_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">user_id</span><span class="si">}</span><span class="s2">_cloud_audit_cloudsploit_azure_</span><span class="si">{</span><span class="n">timestamp</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-3-13">    <span class="n">csv_report_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">report_base_filename</span><span class="si">}</span><span class="s2">.csv&quot;</span>
+</span><span id="__span-3-14">    <span class="n">html_report_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">report_base_filename</span><span class="si">}</span><span class="s2">.html&quot;</span>
+</span><span id="__span-3-15">    <span class="n">pdf_report_filename</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">report_base_filename</span><span class="si">}</span><span class="s2">.pdf&quot;</span>
+</span><span id="__span-3-16">
+</span><span id="__span-3-17">    <span class="n">csv_report_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">report_dir</span><span class="p">,</span> <span class="n">csv_report_filename</span><span class="p">)</span>
+</span><span id="__span-3-18">    <span class="n">html_report_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">report_dir</span><span class="p">,</span> <span class="n">html_report_filename</span><span class="p">)</span>
+</span><span id="__span-3-19">    <span class="n">pdf_report_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">report_dir</span><span class="p">,</span> <span class="n">pdf_report_filename</span><span class="p">)</span>
+</span><span id="__span-3-20">    <span class="n">credentials_file</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cloudsploit_dir</span><span class="p">,</span> <span class="s2">&quot;azure_credentials.json&quot;</span><span class="p">)</span>
+</span><span id="__span-3-21">    <span class="n">logo_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s1">&#39;static&#39;</span><span class="p">,</span> <span class="s1">&#39;images&#39;</span><span class="p">,</span> <span class="s1">&#39;company_logo.PNG&#39;</span><span class="p">)</span> <span class="c1"># Relative path to logo.  The function now uses the absolute path</span>
+</span><span id="__span-3-22">    <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;CloudSploit Azure Scan Report&quot;</span>  <span class="c1"># Dynamic report type</span>
+</span><span id="__span-3-23">
+</span><span id="__span-3-24">    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-3-25">        <span class="c1"># Create Azure credentials file</span>
+</span><span id="__span-3-26">        <span class="n">azure_credentials</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-3-27">            <span class="s2">&quot;ApplicationID&quot;</span><span class="p">:</span> <span class="n">azure_client_id</span><span class="p">,</span>
+</span><span id="__span-3-28">            <span class="s2">&quot;KeyValue&quot;</span><span class="p">:</span> <span class="n">azure_client_secret</span><span class="p">,</span>
+</span><span id="__span-3-29">            <span class="s2">&quot;DirectoryID&quot;</span><span class="p">:</span> <span class="n">azure_tenant_id</span><span class="p">,</span>
+</span><span id="__span-3-30">            <span class="s2">&quot;SubscriptionID&quot;</span><span class="p">:</span> <span class="n">azure_subscription_id</span><span class="p">,</span>
+</span><span id="__span-3-31">        <span class="p">}</span>
+</span><span id="__span-3-32">        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">credentials_file</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+</span><span id="__span-3-33">            <span class="n">json</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">azure_credentials</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</span><span id="__span-3-34">
+</span><span id="__span-3-35">        <span class="c1"># Construct the CloudSploit command for CSV output</span>
+</span><span id="__span-3-36">        <span class="n">command</span> <span class="o">=</span> <span class="p">[</span>
+</span><span id="__span-3-37">            <span class="s2">&quot;node&quot;</span><span class="p">,</span>
+</span><span id="__span-3-38">            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cloudsploit_dir</span><span class="p">,</span> <span class="s1">&#39;index.js&#39;</span><span class="p">),</span>
+</span><span id="__span-3-39">            <span class="s2">&quot;--cloud&quot;</span><span class="p">,</span> <span class="s2">&quot;azure&quot;</span><span class="p">,</span>
+</span><span id="__span-3-40">            <span class="s2">&quot;--config&quot;</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">cloudsploit_dir</span><span class="p">,</span> <span class="s1">&#39;config.js&#39;</span><span class="p">),</span>
+</span><span id="__span-3-41">            <span class="s2">&quot;--console&quot;</span><span class="p">,</span> <span class="s2">&quot;none&quot;</span><span class="p">,</span>
+</span><span id="__span-3-42">            <span class="s2">&quot;--csv&quot;</span><span class="p">,</span> <span class="n">csv_report_path</span><span class="p">,</span>
+</span><span id="__span-3-43">            <span class="s2">&quot;--ignore-ok&quot;</span>
+</span><span id="__span-3-44">        <span class="p">]</span>
+</span><span id="__span-3-45">
+</span><span id="__span-3-46">        <span class="n">result</span> <span class="o">=</span> <span class="n">subprocess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">command</span><span class="p">,</span> <span class="n">capture_output</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">text</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-3-47">
+</span><span id="__span-3-48">        <span class="k">if</span> <span class="n">result</span><span class="o">.</span><span class="n">returncode</span> <span class="o">!=</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-3-49">            <span class="n">error_message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;CloudSploit Azure scan failed. Error: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">stderr</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="si">}</span><span class="s2"> Output: </span><span class="si">{</span><span class="n">result</span><span class="o">.</span><span class="n">stdout</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-3-50">            <span class="k">return</span> <span class="n">error_message</span>
+</span><span id="__span-3-51">
+</span><span id="__span-3-52">        <span class="c1"># Check for report generation</span>
+</span><span id="__span-3-53">        <span class="k">if</span> <span class="ow">not</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">csv_report_path</span><span class="p">):</span>
+</span><span id="__span-3-54">            <span class="n">error_message</span> <span class="o">=</span> <span class="s2">&quot;CloudSploit did not generate the CSV report.&quot;</span>
+</span><span id="__span-3-55">            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="n">error_message</span><span class="p">)</span>
+</span><span id="__span-3-56">
+</span><span id="__span-3-57">        <span class="c1"># Convert CSV to HTML</span>
+</span><span id="__span-3-58">        <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-3-59">            <span class="n">html_content</span> <span class="o">=</span> <span class="n">convert_csv_to_html_table</span><span class="p">(</span><span class="n">csv_report_path</span><span class="p">,</span> <span class="n">html_report_path</span><span class="p">)</span>
+</span><span id="__span-3-60">        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span><span id="__span-3-61">            <span class="n">error_message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Error converting CSV to HTML: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-3-62">            <span class="k">return</span> <span class="n">error_message</span>
+</span><span id="__span-3-63">
+</span><span id="__span-3-64">        <span class="c1"># Convert HTML to PDF and add logo/title</span>
+</span><span id="__span-3-65">        <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-3-66">            <span class="k">if</span> <span class="ow">not</span> <span class="n">convert_html_to_pdf</span><span class="p">(</span><span class="n">html_report_path</span><span class="p">,</span> <span class="n">pdf_report_path</span><span class="p">,</span> <span class="n">logo_path</span><span class="p">,</span> <span class="n">title</span><span class="p">):</span>
+</span><span id="__span-3-67">                <span class="k">return</span> <span class="s2">&quot;Error during PDF Conversion and/or Cover Page/Ending Page Addition&quot;</span>
+</span><span id="__span-3-68">
+</span><span id="__span-3-69">        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span><span id="__span-3-70">            <span class="n">error_message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Error converting HTML to PDF: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-3-71">            <span class="k">return</span> <span class="n">error_message</span>
+</span><span id="__span-3-72">
+</span><span id="__span-3-73">        <span class="k">return</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">pdf_report_filename</span><span class="p">)</span>
+</span><span id="__span-3-74">
+</span><span id="__span-3-75">    <span class="k">except</span> <span class="ne">FileNotFoundError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span><span id="__span-3-76">        <span class="n">error_message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">. Ensure CloudSploit and wkhtmltopdf are installed and in your PATH. Also, ensure the company logo exists at the specified path. CloudSploit path: /home/kali/Desktop/cloudsploit/index.js&quot;</span>
+</span><span id="__span-3-77">        <span class="k">return</span> <span class="n">error_message</span>
+</span><span id="__span-3-78">    <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span><span id="__span-3-79">        <span class="n">error_message</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;An unexpected error occurred: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">&quot;</span>
+</span><span id="__span-3-80">        <span class="k">return</span> <span class="n">error_message</span>
+</span><span id="__span-3-81">    <span class="k">finally</span><span class="p">:</span>
+</span><span id="__span-3-82">        <span class="c1"># Clean up the credentials file</span>
+</span><span id="__span-3-83">        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">credentials_file</span><span class="p">):</span>
+</span><span id="__span-3-84">            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">credentials_file</span><span class="p">)</span>
+</span><span id="__span-3-85">
+</span><span id="__span-3-86">        <span class="c1"># Clean up the CSV and HTML report files</span>
+</span><span id="__span-3-87">        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">csv_report_path</span><span class="p">):</span>
+</span><span id="__span-3-88">            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">csv_report_path</span><span class="p">)</span>
+</span><span id="__span-3-89">        <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">html_report_path</span><span class="p">):</span>
+</span><span id="__span-3-90">            <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">html_report_path</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+</ul>
+<h2 id="dependencies">Dependencies</h2>
+<ul>
+<li><strong>CloudSploit:</strong>  A security assessment tool for cloud environments (specifically Azure in this case). Must be installed and configured, typically using NodeJS.</li>
+<li><strong>NodeJS:</strong>  CloudSploit is a NodeJS application, so NodeJS and NPM (Node Package Manager) must be installed.</li>
+<li><strong>Python Libraries:</strong><ul>
+<li><code>subprocess</code>: For running external commands (CloudSploit).</li>
+<li><code>os</code>: For file system operations.</li>
+<li><code>datetime</code>: For generating unique report filenames.</li>
+<li><code>flask</code>: For accessing the application's root path and configuration.</li>
+<li><code>csv</code>: For reading and processing CSV files.</li>
+<li><code>json</code>: For handling JSON data (Azure credentials).</li>
+<li><code>pdfkit</code>: For converting HTML to PDF (<code>pip install pdfkit</code>). Requires <code>wkhtmltopdf</code> to be installed.</li>
+<li><code>PyMuPDF (fitz)</code>: For adding the company logo and title to the PDF (<code>pip install pymupdf</code>).</li>
+</ul>
+</li>
+<li><strong>wkhtmltopdf:</strong>  A command-line tool required by <code>pdfkit</code> to convert HTML to PDF. It needs to be installed separately. Follow the instructions at <a href="https://wkhtmltopdf.org/downloads.html">https://wkhtmltopdf.org/downloads.html</a> for your operating system.</li>
+</ul>
+<h2 id="configuration">Configuration</h2>
+<ul>
+<li><strong><code>WKHTMLTOPDF_EXECUTABLE</code>:</strong> A configuration setting (though not explicitly used in the provided code - it's hardcoded as <code>/usr/local/bin/wkhtmltopdf</code> within the <code>convert_html_to_pdf</code> function).  In a production environment, this should be configurable in the Flask application to specify the path to the <code>wkhtmltopdf</code> executable.</li>
+<li><strong><code>COMPANY_LOGO_PATH</code>:</strong> Specifies the relative path to the company logo image within the Flask application's static files directory (e.g., <code>'static/images/company_logo.PNG'</code>).</li>
+<li><strong><code>cloudsploit_dir</code>:</strong> This path, <code>os.path.join(os.path.dirname(current_app.root_path), 'cloudsploit')</code>, should point to where the CloudSploit code is installed. Ensure this path is correct.</li>
+</ul>
+<h2 id="error-handling">Error Handling</h2>
+<p>The script includes robust error handling using <code>try...except...finally</code> blocks. It handles potential errors during:</p>
+<ul>
+<li>File creation and writing (credentials file).</li>
+<li>CloudSploit execution (checking the return code).</li>
+<li>CSV to HTML conversion.</li>
+<li>PDF conversion (both <code>pdfkit</code> and <code>PyMuPDF</code>).</li>
+<li>Missing dependencies (e.g., CloudSploit or <code>wkhtmltopdf</code> not installed).</li>
+<li>Logo file not found.</li>
+</ul>
+<p>Errors are returned as error messages to the caller.</p>
+<h2 id="security-considerations">Security Considerations</h2>
+<ul>
+<li><strong>Azure Credentials:</strong> The script handles sensitive Azure credentials (client ID, client secret, tenant ID, subscription ID). It's crucial to:<ul>
+<li>Store the credentials securely before passing them to the script.</li>
+<li>Ensure that the credentials file is deleted immediately after use.</li>
+</ul>
+</li>
+<li><strong>Path Handling:</strong>  Carefully validate and sanitize any user-provided paths to prevent path traversal vulnerabilities.</li>
+<li><strong>Subprocess Execution:</strong> While <code>subprocess.run</code> is used, be aware of potential command injection vulnerabilities if any part of the command arguments are derived from untrusted sources (which doesn't appear to be the case here, but it's a general security principle).</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

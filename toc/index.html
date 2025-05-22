@@ -9,10 +9,8 @@
       
       
       
-        <link rel="prev" href="..">
       
-      
-        <link rel="next" href="../scanners/">
+        <link rel="next" href="..">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +18,7 @@
     
     
       
-        <title>Overview - VulnScanAI Documentation</title>
+        <title>Table of Contents - VulnScanAI Documentation</title>
       
     
     
@@ -62,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#directory-app" class="md-skip">
+        <a href="#table-of-contents" class="md-skip">
           Skip to content
         </a>
       
@@ -98,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Overview
+              Table of Contents
             
           </span>
         </div>
@@ -151,10 +149,19 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../toc/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -165,6 +172,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -195,20 +203,18 @@
       
   
   
-    
   
   
-  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -224,7 +230,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             App Directory
@@ -235,19 +241,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../app/" class="md-nav__link">
         
   
   
@@ -258,7 +255,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -650,118 +646,12 @@
 
 
 
-<h1 id="directory-app">Directory: <code>app</code></h1>
-<p><strong>Purpose:</strong> This directory contains the core application logic for the VulnScanAI Flask website. It includes configuration, models, forms, views, and supporting modules.</p>
-<p><strong>Subdirectories:</strong></p>
+<h1 id="table-of-contents">Table of Contents</h1>
 <ul>
-<li><code>reports</code>: Stores generated reports from various vulnerability scanners. These reports are often in PDF or HTML format.</li>
-<li><code>scanners</code>: Contains the code for interacting with different vulnerability scanning tools. Each scanner has its own module for integration.</li>
-<li><code>static</code>: Holds static files like CSS, JavaScript, images, and PDFs. These files are served directly to the client.</li>
-<li><code>templates</code>: Contains the HTML templates used to render the website's user interface. Jinja2 templating engine is used.</li>
-<li><code>uploads</code>: Stores uploaded PDF files for Generative AI Analysis.</li>
-<li><code>views</code>: Contains the route handlers (view functions) that define the application's behavior. These functions handle user requests and interact with the models.</li>
-</ul>
-<p><strong>Files:</strong></p>
-<ul>
-<li>
-<p><code>config.py</code>:</p>
-<ul>
-<li><strong>Description:</strong> Configuration settings for the Flask application. Loads settings from environment variables using <code>dotenv</code>, providing a centralized location for sensitive information like database URLs, API keys, and mail server details.</li>
-<li><strong>Key Functionality:</strong><ul>
-<li>Defines configuration variables for different aspects of the application, including:<ul>
-<li><code>SECRET_KEY</code>: Used for session management and CSRF protection.</li>
-<li><code>SQLALCHEMY_DATABASE_URI</code>: The database connection string.</li>
-<li><code>MAIL_*</code>: Settings for the Flask-Mail extension (server, port, credentials).</li>
-<li><code>RECAPTCHA_*</code>: Keys for Google reCAPTCHA integration.</li>
-<li><code>GEMINI_API_KEY</code>: API key for accessing the Google Gemini AI model.</li>
-<li><code>MOBSF_API_*</code>: API URL and Key for MobSF integration.</li>
-<li><code>PERMANENT_SESSION_LIFETIME</code>: Sets the session lifetime.</li>
-<li><code>PAYPAL_*</code>: API URL, Client ID and Client Secret for PayPal payment gateway integration.</li>
-</ul>
-</li>
-<li>Reads configuration values from environment variables using <code>os.environ.get()</code>. Provides default values or handles cases where the environment variables are not set (e.g., converting port strings to integers).</li>
-</ul>
-</li>
-<li><strong>Dependencies:</strong> <code>os</code>, <code>dotenv</code></li>
-</ul>
-</li>
-<li>
-<p><code>extensions.py</code>:</p>
-<ul>
-<li><strong>Description:</strong> Initializes and configures Flask extensions. Defines instances of Flask-SQLAlchemy (<code>db</code>) for database interaction and Flask-Mail (<code>mail</code>) for sending emails.</li>
-<li><strong>Key Functionality:</strong><ul>
-<li>Creates instances of Flask extensions:<ul>
-<li><code>db = SQLAlchemy()</code>: Creates the SQLAlchemy database object.</li>
-<li><code>mail = Mail()</code>: Creates the Flask-Mail object.</li>
-</ul>
-</li>
-<li>Provides central access points to the database and mail functionalities throughout the application.</li>
-</ul>
-</li>
-<li><strong>Dependencies:</strong> <code>flask_sqlalchemy</code>, <code>flask_mail</code></li>
-</ul>
-</li>
-<li>
-<p><code>forms.py</code>:</p>
-<ul>
-<li><strong>Description:</strong> Defines the forms used for user input, such as login, registration, scan configuration, contact us, request demo, password reset, and password update. Leverages Flask-WTF for form handling and CSRF protection.</li>
-<li><strong>Key Functionality:</strong><ul>
-<li>Defines form classes (e.g., <code>RegistrationForm</code>, <code>LoginForm</code>, <code>ContactForm</code>, <code>RequestDemoForm</code>, <code>ResetPasswordForm</code>, <code>ChangePasswordForm</code>) using WTForms fields and validators.</li>
-<li>Includes custom validators (e.g., <code>password_strength</code>) for enforcing specific password requirements.</li>
-<li>Implements validation logic for email format, password confirmation, phone number format, and terms and conditions acceptance.</li>
-</ul>
-</li>
-<li><strong>Dependencies:</strong> <code>flask_wtf</code>, <code>wtforms</code>, <code>wtforms.validators</code></li>
-</ul>
-</li>
-<li>
-<p><code>__init__.py</code>:</p>
-<ul>
-<li><strong>Description:</strong> Makes the <code>app</code> directory a Python package. Initializes the Flask application instance, configures it, and registers blueprints. Configures login manager and CSP (Content Security Policy).</li>
-<li><strong>Key Functionality:</strong><ul>
-<li>Creates the Flask application instance (<code>app = Flask(__name__)</code>).</li>
-<li>Loads configuration from <code>config.py</code>.</li>
-<li>Initializes extensions using <code>db.init_app(app)</code> and <code>mail.init_app(app)</code>.</li>
-<li>Configures Flask-Login:<ul>
-<li>Creates <code>login_manager</code> and sets the login view.</li>
-<li>Defines <code>user_loader</code> function to load users from the database.</li>
-</ul>
-</li>
-<li>Registers blueprints for the different views (e.g., <code>main_bp</code>, <code>auth_bp</code>, <code>payments_bp</code>, <code>genai_bp</code>).</li>
-<li>Implements Content Security Policy:<ul>
-<li>Generates a unique <code>nonce</code> for each request for inline scripts.</li>
-<li>Sets the <code>Content-Security-Policy</code> header in the response to mitigate XSS attacks.</li>
-</ul>
-</li>
-<li>Uses <code>ProxyFix</code> middleware for proper handling of requests behind a proxy.</li>
-</ul>
-</li>
-<li><strong>Dependencies:</strong> <code>flask</code>, <code>flask_login</code>, <code>werkzeug</code>, <code>os</code>, <code>base64</code>, <code>.config</code>, <code>.extensions</code>, <code>.views</code></li>
-</ul>
-</li>
-<li>
-<p><code>models.py</code>:</p>
-<ul>
-<li><strong>Description:</strong> Defines the database models used by the application, such as <code>User</code>, <code>Subscription</code>, <code>Payment</code>, <code>LoginDetail</code>, and <code>Access</code>. Uses Flask-SQLAlchemy to define database tables and relationships.</li>
-<li><strong>Key Functionality:</strong><ul>
-<li>Defines classes that inherit from <code>db.Model</code> to represent database tables.</li>
-<li>Models include:<ul>
-<li><code>User</code>: Represents user accounts, including authentication details, subscription information, and relationships to logins, access events, and payments.</li>
-<li><code>Subscription</code>: Defines subscription plans (e.g., Free, Pro, Premium) with pricing and validity periods.</li>
-<li><code>Payment</code>: Records payment transactions associated with user subscriptions.</li>
-<li><code>LoginDetail</code>: Stores login history, including IP address and login time.</li>
-<li><code>Access</code>: Records access information, including device details and login time.</li>
-</ul>
-</li>
-<li>Includes methods for managing user subscriptions (e.g., <code>is_subscription_active</code> in the <code>User</code> model).</li>
-</ul>
-</li>
-<li><strong>Dependencies:</strong> <code>flask_sqlalchemy</code>, <code>flask_login</code>, <code>datetime</code></li>
-</ul>
-</li>
-<li>
-<p><code>reports/</code>, <code>scanners/</code>, <code>static/</code>, <code>templates/</code>, <code>uploads/</code>, <code>views/</code>: <em>(These directories are documented separately)</em></p>
-</li>
+<li><a href="../">Home</a></li>
+<li><a href="../app/">App Directory</a></li>
+<li><a href="../scanners/">Scanners</a></li>
+<li><a href="../views/">Views</a></li>
 </ul>
 
 
