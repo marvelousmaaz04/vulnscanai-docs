@@ -1,0 +1,1845 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../13_views_init/">
+      
+      
+        <link rel="next" href="../15_auth/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>Main - VulnScanAI Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#file-mainpy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="VulnScanAI Documentation" class="md-header__button md-logo" aria-label="VulnScanAI Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            VulnScanAI Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Main
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="VulnScanAI Documentation" class="md-nav__button md-logo" aria-label="VulnScanAI Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    VulnScanAI Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Table of Contents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    VulnScanAI
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            VulnScanAI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    App Directory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            App Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Scanners Directory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Scanners Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_scanners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_nmap_scanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nmap Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_nikto_scanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nikto Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_zap_scanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ZAP Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_mobsf_scanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MobSF Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_sqlmap_scanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SQLMap Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_ssl_scanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SSL Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_prowler_scanner_aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prowler AWS Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_prowler_scanner_gcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prowler GCP Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_cloudsploit_scanner_azure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CloudSploit Azure Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Views Directory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Views Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12_views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_views_init/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    init
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Main
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15_auth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16_genai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GenAI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../17_analyze_report_ai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI Report Analysis
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18_payments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Payments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_4" id="__nav_3_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Templates Directory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Templates Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19_templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20_base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Base
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21_home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22_about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23_contact_us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contact Us
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24_request_demo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Request Demo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25_login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Login
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26_profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Profile
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    config
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    extensions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    forms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="file-mainpy">File: <code>main.py</code></h1>
+<p><strong>Purpose:</strong> This file defines the main Flask blueprint for the VulnScanAI web application. It handles core routes related to the homepage, user profiles, vulnerability scanning, report downloads, and contact/demo requests. It serves as the primary entry point for the application's core functionalities.</p>
+<p><strong>Overview:</strong></p>
+<p>The <code>main.py</code> file handles essential tasks such as:</p>
+<ul>
+<li><strong>Routing:</strong> Defining URL endpoints and associating them with specific functions.</li>
+<li><strong>Templating:</strong> Rendering HTML pages using the Jinja2 templating engine.</li>
+<li><strong>User Authentication:</strong> Handling user login and authorization using Flask-Login.</li>
+<li><strong>Vulnerability Scanning:</strong> Integrating with various security scanners to perform assessments.</li>
+<li><strong>Report Management:</strong> Downloading generated reports.</li>
+<li><strong>Form Handling:</strong> Processing user input from forms for contact, demo requests, etc.</li>
+<li><strong>Email Integration:</strong> Sending emails for confirmation or admin notification.</li>
+</ul>
+<p><strong>Key Components and Functionality:</strong></p>
+<ul>
+<li>
+<p><strong>Blueprint Creation:</strong> Creates a Flask Blueprint named <code>main_bp</code> to organize the routes and related resources.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">Blueprint</span>
+</span><span id="__span-0-2">
+</span><span id="__span-0-3"><span class="n">main_bp</span> <span class="o">=</span> <span class="n">Blueprint</span><span class="p">(</span><span class="s1">&#39;main&#39;</span><span class="p">,</span> <span class="vm">__name__</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong>Report Directories:</strong> Defines constants for the base directories where reports are stored.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+</span><span id="__span-1-2">
+</span><span id="__span-1-3"><span class="n">UPLOAD_FOLDER</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">main_bp</span><span class="o">.</span><span class="n">root_path</span><span class="p">),</span> <span class="s1">&#39;uploads&#39;</span><span class="p">)</span>
+</span><span id="__span-1-4"><span class="n">os</span><span class="o">.</span><span class="n">makedirs</span><span class="p">(</span><span class="n">UPLOAD_FOLDER</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-1-5"><span class="n">MAX_FILE_SIZE_BYTES</span> <span class="o">=</span> <span class="mi">5</span> <span class="o">*</span> <span class="mi">1024</span> <span class="o">*</span> <span class="mi">1024</span>  <span class="c1"># 5MB</span>
+</span><span id="__span-1-6">
+</span><span id="__span-1-7"><span class="n">NMAP_REPORT_BASE</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">main_bp</span><span class="o">.</span><span class="n">root_path</span><span class="p">),</span> <span class="s1">&#39;reports&#39;</span><span class="p">,</span> <span class="s1">&#39;nmap&#39;</span><span class="p">)</span>
+</span><span id="__span-1-8"><span class="n">SSL_REPORT_BASE</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">main_bp</span><span class="o">.</span><span class="n">root_path</span><span class="p">),</span> <span class="s1">&#39;reports&#39;</span><span class="p">,</span> <span class="s1">&#39;ssl&#39;</span><span class="p">)</span>
+</span><span id="__span-1-9"><span class="n">MOBSF_REPORT_BASE</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">main_bp</span><span class="o">.</span><span class="n">root_path</span><span class="p">),</span> <span class="s1">&#39;reports&#39;</span><span class="p">,</span> <span class="s1">&#39;mobsf&#39;</span><span class="p">)</span>
+</span><span id="__span-1-10"><span class="n">CLOUD_AUDIT_REPORT_BASE</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">main_bp</span><span class="o">.</span><span class="n">root_path</span><span class="p">),</span> <span class="s1">&#39;reports&#39;</span><span class="p">,</span> <span class="s1">&#39;cloud_audit&#39;</span><span class="p">)</span>
+</span><span id="__span-1-11"><span class="n">SQLMAP_REPORT_BASE</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">main_bp</span><span class="o">.</span><span class="n">root_path</span><span class="p">),</span> <span class="s1">&#39;reports&#39;</span><span class="p">,</span> <span class="s1">&#39;sqlmap&#39;</span><span class="p">,</span> <span class="s1">&#39;pdf_results&#39;</span><span class="p">)</span>
+</span><span id="__span-1-12"><span class="n">ZAP_REPORT_BASE</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">main_bp</span><span class="o">.</span><span class="n">root_path</span><span class="p">),</span> <span class="s1">&#39;reports&#39;</span><span class="p">,</span> <span class="s1">&#39;zap&#39;</span><span class="p">)</span> <span class="c1"># Define ZAP report base</span>
+</span><span id="__span-1-13"><span class="n">NIKTO_REPORT_BASE</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="n">main_bp</span><span class="o">.</span><span class="n">root_path</span><span class="p">),</span> <span class="s1">&#39;reports&#39;</span><span class="p">,</span> <span class="s1">&#39;nikto&#39;</span><span class="p">)</span>
+</span><span id="__span-1-14"><span class="n">NIKTO_RESULTS_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">NIKTO_REPORT_BASE</span><span class="p">,</span> <span class="s1">&#39;nikto_results&#39;</span><span class="p">)</span>
+</span><span id="__span-1-15"><span class="n">AUTHENTICATED_NIKTO_RESULTS_DIR</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">NIKTO_REPORT_BASE</span><span class="p">,</span> <span class="s1">&#39;authenticated_nikto_results&#39;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong>URL Validation:</strong> Implements helper functions for validating URLs and IP addresses.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+</span><span id="__span-2-2">
+</span><span id="__span-2-3"><span class="k">def</span><span class="w"> </span><span class="nf">is_valid_url</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+</span><span id="__span-2-4"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Simple URL validation.&quot;&quot;&quot;</span>
+</span><span id="__span-2-5">    <span class="n">url_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^(https?://)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*/?$&#39;</span><span class="p">)</span>
+</span><span id="__span-2-6">    <span class="k">return</span> <span class="nb">bool</span><span class="p">(</span><span class="n">url_pattern</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">url</span><span class="p">))</span>
+</span><span id="__span-2-7">
+</span><span id="__span-2-8"><span class="k">def</span><span class="w"> </span><span class="nf">is_valid_ip</span><span class="p">(</span><span class="n">ip</span><span class="p">):</span>
+</span><span id="__span-2-9"><span class="w">    </span><span class="sd">&quot;&quot;&quot;Simple IPv4 validation, excluding suspicious IPs.&quot;&quot;&quot;</span>
+</span><span id="__span-2-10">    <span class="n">ip_pattern</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;^(\d{1,3}\.)</span><span class="si">{3}</span><span class="s1">\d{1,3}$&#39;</span><span class="p">)</span>
+</span><span id="__span-2-11">    <span class="k">if</span> <span class="ow">not</span> <span class="n">ip_pattern</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">ip</span><span class="p">):</span>
+</span><span id="__span-2-12">        <span class="k">return</span> <span class="kc">False</span>
+</span><span id="__span-2-13">
+</span><span id="__span-2-14">    <span class="n">parts</span> <span class="o">=</span> <span class="n">ip</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
+</span><span id="__span-2-15">    <span class="k">if</span> <span class="ow">not</span> <span class="nb">all</span><span class="p">(</span><span class="mi">0</span> <span class="o">&lt;=</span> <span class="nb">int</span><span class="p">(</span><span class="n">part</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">255</span> <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">):</span>
+</span><span id="__span-2-16">        <span class="k">return</span> <span class="kc">False</span>
+</span><span id="__span-2-17">
+</span><span id="__span-2-18">    <span class="c1"># Exclude all zeros, all 255s, and other potentially suspicious ranges</span>
+</span><span id="__span-2-19">    <span class="k">if</span> <span class="nb">all</span><span class="p">(</span><span class="n">part</span> <span class="o">==</span> <span class="s1">&#39;0&#39;</span> <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">)</span> <span class="ow">or</span> <span class="nb">all</span><span class="p">(</span><span class="n">part</span> <span class="o">==</span> <span class="s1">&#39;255&#39;</span> <span class="k">for</span> <span class="n">part</span> <span class="ow">in</span> <span class="n">parts</span><span class="p">):</span>
+</span><span id="__span-2-20">        <span class="k">return</span> <span class="kc">False</span>
+</span><span id="__span-2-21">
+</span><span id="__span-2-22">    <span class="k">return</span> <span class="kc">True</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong><code>home()</code> Route:</strong> Handles requests to the application's homepage.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">render_template</span>
+</span><span id="__span-3-2">
+</span><span id="__span-3-3"><span class="nd">@main_bp</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)</span>
+</span><span id="__span-3-4"><span class="k">def</span><span class="w"> </span><span class="nf">home</span><span class="p">():</span>
+</span><span id="__span-3-5">    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;home.html&#39;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong><code>profile()</code> Route:</strong> Displays the user profile information, requires authentication.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span>
+<span class="normal">8</span>
+<span class="normal">9</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">render_template</span>
+</span><span id="__span-4-2"><span class="kn">from</span><span class="w"> </span><span class="nn">flask_login</span><span class="w"> </span><span class="kn">import</span> <span class="n">login_required</span><span class="p">,</span> <span class="n">current_user</span>
+</span><span id="__span-4-3">
+</span><span id="__span-4-4"><span class="nd">@main_bp</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/profile&#39;</span><span class="p">)</span>
+</span><span id="__span-4-5"><span class="nd">@login_required</span>
+</span><span id="__span-4-6"><span class="k">def</span><span class="w"> </span><span class="nf">profile</span><span class="p">():</span>
+</span><span id="__span-4-7">    <span class="n">user</span> <span class="o">=</span> <span class="n">current_user</span>
+</span><span id="__span-4-8">    <span class="c1"># ... (code to retrieve subscription details) ...</span>
+</span><span id="__span-4-9">    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;profile.html&#39;</span><span class="p">,</span> <span class="n">subscriptions</span><span class="o">=</span><span class="n">subscriptions</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong><code>get_user_subscription_details()</code>:</strong> A helper function to determine a user's subscription</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-5-1"><span class="kn">from</span><span class="w"> </span><span class="nn">app.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">User</span><span class="p">,</span> <span class="n">Subscription</span>
+</span><span id="__span-5-2"><span class="kn">from</span><span class="w"> </span><span class="nn">app.extensions</span><span class="w"> </span><span class="kn">import</span> <span class="n">db</span>
+</span><span id="__span-5-3">
+</span><span id="__span-5-4"><span class="k">def</span><span class="w"> </span><span class="nf">get_user_subscription_details</span><span class="p">(</span><span class="n">user_id</span><span class="p">):</span>
+</span><span id="__span-5-5"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-5-6"><span class="sd">Retrieves the user&#39;s subscription details, including the subscription plan name.</span>
+</span><span id="__span-5-7">
+</span><span id="__span-5-8"><span class="sd">Args:</span>
+</span><span id="__span-5-9"><span class="sd">    user_id (int): The ID of the user.</span>
+</span><span id="__span-5-10">
+</span><span id="__span-5-11"><span class="sd">Returns:</span>
+</span><span id="__span-5-12"><span class="sd">    tuple: (subscription_id, subscription_name) or (None, None) if not found.</span>
+</span><span id="__span-5-13"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-5-14"><span class="n">user</span> <span class="o">=</span> <span class="n">User</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+</span><span id="__span-5-15"><span class="k">if</span> <span class="n">user</span> <span class="ow">and</span> <span class="n">user</span><span class="o">.</span><span class="n">subscription_id</span><span class="p">:</span>
+</span><span id="__span-5-16">    <span class="n">subscription</span> <span class="o">=</span> <span class="n">Subscription</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">user</span><span class="o">.</span><span class="n">subscription_id</span><span class="p">)</span>
+</span><span id="__span-5-17">    <span class="k">if</span> <span class="n">subscription</span><span class="p">:</span>
+</span><span id="__span-5-18">        <span class="k">return</span> <span class="n">user</span><span class="o">.</span><span class="n">subscription_id</span><span class="p">,</span> <span class="n">subscription</span><span class="o">.</span><span class="n">plan_name</span>
+</span><span id="__span-5-19">    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-5-20">        <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+</span><span id="__span-5-21"><span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong><code>get_allowed_scan_options()</code>:</strong> A helper function to determine a user's allowed scans</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-6-1"><span class="k">def</span><span class="w"> </span><span class="nf">get_allowed_scan_options</span><span class="p">(</span><span class="n">subscription_name</span><span class="p">):</span>
+</span><span id="__span-6-2"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-6-3"><span class="sd">Returns a dictionary of allowed scan options based on the subscription plan.</span>
+</span><span id="__span-6-4"><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-6-5"><span class="n">all_options</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-6-6">    <span class="s2">&quot;Network Scanning&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-6-7">        <span class="s2">&quot;port_scan&quot;</span><span class="p">:</span> <span class="s2">&quot;Port Scan&quot;</span><span class="p">,</span>
+</span><span id="__span-6-8">        <span class="s2">&quot;os_detection&quot;</span><span class="p">:</span> <span class="s2">&quot;OS Detection&quot;</span><span class="p">,</span>
+</span><span id="__span-6-9">        <span class="s2">&quot;aggressive_scan&quot;</span><span class="p">:</span> <span class="s2">&quot;Aggressive Scan&quot;</span><span class="p">,</span>
+</span><span id="__span-6-10">        <span class="s2">&quot;tcp_syn_scan&quot;</span><span class="p">:</span> <span class="s2">&quot;TCP SYN Scan&quot;</span><span class="p">,</span>
+</span><span id="__span-6-11">        <span class="s2">&quot;fragmented_scan&quot;</span><span class="p">:</span> <span class="s2">&quot;Fragmented Packet Scan&quot;</span><span class="p">,</span>
+</span><span id="__span-6-12">    <span class="p">},</span>
+</span><span id="__span-6-13">    <span class="s2">&quot;Web Application Scanning&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-6-14">        <span class="s2">&quot;zap_scan&quot;</span><span class="p">:</span> <span class="s2">&quot;ZAP Scan&quot;</span><span class="p">,</span>
+</span><span id="__span-6-15">        <span class="s2">&quot;zap_authenticated_scan&quot;</span><span class="p">:</span> <span class="s2">&quot;ZAP Authenticated Scan&quot;</span><span class="p">,</span>
+</span><span id="__span-6-16">        <span class="s2">&quot;nikto_scan&quot;</span><span class="p">:</span> <span class="s2">&quot;Nikto Scan&quot;</span><span class="p">,</span>
+</span><span id="__span-6-17">        <span class="s2">&quot;nikto_authenticated_deep&quot;</span><span class="p">:</span> <span class="s2">&quot;Nikto Authenticated Scan&quot;</span><span class="p">,</span>
+</span><span id="__span-6-18">    <span class="p">},</span>
+</span><span id="__span-6-19">    <span class="s2">&quot;Mobile Application Scans&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-6-20">        <span class="s2">&quot;mobsf_scan&quot;</span><span class="p">:</span> <span class="s2">&quot;MobSF Scan&quot;</span><span class="p">,</span>
+</span><span id="__span-6-21">    <span class="p">},</span>
+</span><span id="__span-6-22">    <span class="s2">&quot;Database Scans&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-6-23">        <span class="s2">&quot;sqlmap_scan&quot;</span><span class="p">:</span> <span class="s2">&quot;SQLMap Scan&quot;</span><span class="p">,</span>
+</span><span id="__span-6-24">    <span class="p">},</span>
+</span><span id="__span-6-25">    <span class="s2">&quot;SSL Scans&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-6-26">        <span class="s2">&quot;ssl_scan&quot;</span><span class="p">:</span> <span class="s2">&quot;SSL/TLS Vulnerability Scan (SSLScan)&quot;</span><span class="p">,</span>
+</span><span id="__span-6-27">    <span class="p">},</span>
+</span><span id="__span-6-28">    <span class="s2">&quot;Cloud Audits&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-6-29">        <span class="s2">&quot;prowler_aws_scan&quot;</span><span class="p">:</span> <span class="s2">&quot;Prowler AWS Audit&quot;</span><span class="p">,</span>
+</span><span id="__span-6-30">        <span class="s2">&quot;cloudsploit_azure_scan&quot;</span><span class="p">:</span> <span class="s2">&quot;CloudSploit Azure Audit&quot;</span><span class="p">,</span>
+</span><span id="__span-6-31">        <span class="s2">&quot;prowler_gcp_scan&quot;</span><span class="p">:</span> <span class="s2">&quot;Prowler GCP Audit&quot;</span>
+</span><span id="__span-6-32">    <span class="p">},</span>
+</span><span id="__span-6-33"><span class="p">}</span>
+</span><span id="__span-6-34"><span class="k">if</span> <span class="n">subscription_name</span> <span class="o">==</span> <span class="s2">&quot;Free Security&quot;</span><span class="p">:</span>
+</span><span id="__span-6-35">    <span class="n">allowed_options</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-6-36">        <span class="s2">&quot;Network Scanning&quot;</span><span class="p">:</span> <span class="n">all_options</span><span class="p">[</span><span class="s2">&quot;Network Scanning&quot;</span><span class="p">],</span>  <span class="c1"># Allow all network scans</span>
+</span><span id="__span-6-37">        <span class="s2">&quot;SSL Scans&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;ssl_scan&quot;</span><span class="p">:</span> <span class="s2">&quot;SSL/TLS Vulnerability Scan (SSLScan)&quot;</span><span class="p">},</span>
+</span><span id="__span-6-38">    <span class="p">}</span>
+</span><span id="__span-6-39"><span class="k">elif</span> <span class="n">subscription_name</span> <span class="o">==</span> <span class="s2">&quot;Pro Security&quot;</span><span class="p">:</span>
+</span><span id="__span-6-40">    <span class="n">allowed_options</span> <span class="o">=</span> <span class="p">{</span>
+</span><span id="__span-6-41">        <span class="s2">&quot;Network Scanning&quot;</span><span class="p">:</span> <span class="n">all_options</span><span class="p">[</span><span class="s2">&quot;Network Scanning&quot;</span><span class="p">],</span>
+</span><span id="__span-6-42">        <span class="s2">&quot;Web Application Scanning&quot;</span><span class="p">:</span> <span class="p">{</span>
+</span><span id="__span-6-43">            <span class="s2">&quot;zap_scan&quot;</span><span class="p">:</span> <span class="s2">&quot;ZAP Scan&quot;</span><span class="p">,</span>
+</span><span id="__span-6-44">            <span class="s2">&quot;zap_authenticated_scan&quot;</span><span class="p">:</span> <span class="s2">&quot;ZAP Authenticated Scan&quot;</span><span class="p">,</span>
+</span><span id="__span-6-45">            <span class="s2">&quot;nikto_scan&quot;</span><span class="p">:</span> <span class="s2">&quot;Nikto Scan&quot;</span><span class="p">,</span>
+</span><span id="__span-6-46">            <span class="s2">&quot;nikto_authenticated_deep&quot;</span><span class="p">:</span> <span class="s2">&quot;Nikto Authenticated Scan&quot;</span><span class="p">,</span>
+</span><span id="__span-6-47">        <span class="p">},</span>
+</span><span id="__span-6-48">        <span class="s2">&quot;Database Scans&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;sqlmap_scan&quot;</span><span class="p">:</span> <span class="s2">&quot;SQLMap Scan&quot;</span><span class="p">},</span>
+</span><span id="__span-6-49">        <span class="s2">&quot;SSL Scans&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;ssl_scan&quot;</span><span class="p">:</span> <span class="s2">&quot;SSL/TLS Vulnerability Scan (SSLScan)&quot;</span><span class="p">},</span>
+</span><span id="__span-6-50">    <span class="p">}</span>
+</span><span id="__span-6-51"><span class="k">elif</span> <span class="n">subscription_name</span> <span class="o">==</span> <span class="s2">&quot;Premium Security&quot;</span><span class="p">:</span>
+</span><span id="__span-6-52">    <span class="n">allowed_options</span> <span class="o">=</span> <span class="n">all_options</span>
+</span><span id="__span-6-53"><span class="k">else</span><span class="p">:</span>
+</span><span id="__span-6-54">    <span class="n">allowed_options</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-6-55">
+</span><span id="__span-6-56"><span class="k">return</span> <span class="n">allowed_options</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong><code>scan()</code> Route:</strong> Handles vulnerability scanning requests. It is a central function for various scan types.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-7-1"><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">request</span><span class="p">,</span> <span class="n">jsonify</span>
+</span><span id="__span-7-2"><span class="kn">from</span><span class="w"> </span><span class="nn">flask_login</span><span class="w"> </span><span class="kn">import</span> <span class="n">login_required</span><span class="p">,</span> <span class="n">current_user</span>
+</span><span id="__span-7-3"><span class="kn">import</span><span class="w"> </span><span class="nn">app.scanners.nmap_scanner</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">nmap_scanner</span> <span class="c1">#Example scanner import</span>
+</span><span id="__span-7-4"><span class="kn">import</span><span class="w"> </span><span class="nn">os</span> <span class="c1">#to get the base name</span>
+</span><span id="__span-7-5"><span class="kn">from</span><span class="w"> </span><span class="nn">app.models</span><span class="w"> </span><span class="kn">import</span> <span class="n">User</span><span class="p">,</span> <span class="n">Subscription</span> <span class="c1">#for access control</span>
+</span><span id="__span-7-6"><span class="c1"># And other scanner modules...</span>
+</span><span id="__span-7-7">
+</span><span id="__span-7-8"><span class="nd">@main_bp</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/scan&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+</span><span id="__span-7-9"><span class="nd">@login_required</span>
+</span><span id="__span-7-10"><span class="k">def</span><span class="w"> </span><span class="nf">scan</span><span class="p">():</span>
+</span><span id="__span-7-11">    <span class="n">user_id</span> <span class="o">=</span> <span class="n">current_user</span><span class="o">.</span><span class="n">id</span>
+</span><span id="__span-7-12">    <span class="n">subscription_id</span><span class="p">,</span> <span class="n">subscription_name</span> <span class="o">=</span> <span class="n">get_user_subscription_details</span><span class="p">(</span><span class="n">user_id</span><span class="p">)</span>
+</span><span id="__span-7-13">    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span> <span class="o">==</span> <span class="s1">&#39;POST&#39;</span><span class="p">:</span>
+</span><span id="__span-7-14">    <span class="n">scan_category</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;scan_category&#39;</span><span class="p">)</span>
+</span><span id="__span-7-15">    <span class="n">scan_type</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;scan_type&#39;</span><span class="p">)</span>
+</span><span id="__span-7-16">    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Scan Type: </span><span class="si">{</span><span class="n">scan_type</span><span class="si">}</span><span class="s2">, Category: </span><span class="si">{</span><span class="n">scan_category</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</span><span id="__span-7-17">     <span class="c1"># Get allowed options for the user&#39;s subscription</span>
+</span><span id="__span-7-18">    <span class="n">allowed_options</span> <span class="o">=</span> <span class="n">get_allowed_scan_options</span><span class="p">(</span><span class="n">subscription_name</span><span class="p">)</span>
+</span><span id="__span-7-19">
+</span><span id="__span-7-20">    <span class="c1"># Check if the requested scan_type is allowed for the user&#39;s subscription.</span>
+</span><span id="__span-7-21">    <span class="k">if</span> <span class="p">(</span>
+</span><span id="__span-7-22">        <span class="n">scan_category</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">allowed_options</span> <span class="ow">or</span>
+</span><span id="__span-7-23">        <span class="n">scan_type</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">allowed_options</span><span class="p">[</span><span class="n">scan_category</span><span class="p">]</span>
+</span><span id="__span-7-24">    <span class="p">):</span>
+</span><span id="__span-7-25">        <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;You are not authorized to perform this scan.&#39;</span><span class="p">}),</span> <span class="mi">403</span>
+</span><span id="__span-7-26">
+</span><span id="__span-7-27">
+</span><span id="__span-7-28">    <span class="k">if</span> <span class="n">scan_category</span> <span class="o">==</span> <span class="s1">&#39;Network Scanning&#39;</span><span class="p">:</span>
+</span><span id="__span-7-29">        <span class="n">target</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;target&#39;</span><span class="p">)</span>
+</span><span id="__span-7-30">        <span class="n">nmap_options</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;nmap_options&#39;</span><span class="p">)</span>
+</span><span id="__span-7-31">        <span class="n">ports</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">form</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ports&#39;</span><span class="p">)</span> <span class="c1"># For TCP SYN Scan</span>
+</span><span id="__span-7-32">
+</span><span id="__span-7-33">        <span class="k">if</span> <span class="ow">not</span> <span class="n">target</span><span class="p">:</span>
+</span><span id="__span-7-34">            <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Target is required for Network Scan.&#39;</span><span class="p">}),</span> <span class="mi">400</span>
+</span><span id="__span-7-35">
+</span><span id="__span-7-36">        <span class="k">if</span> <span class="n">scan_type</span> <span class="ow">in</span> <span class="p">[</span><span class="s1">&#39;port_scan&#39;</span><span class="p">,</span> <span class="s1">&#39;tcp_syn_scan&#39;</span><span class="p">,</span> <span class="s1">&#39;aggressive_scan&#39;</span><span class="p">,</span> <span class="s1">&#39;os_detection&#39;</span><span class="p">,</span> <span class="s1">&#39;fragmented_scan&#39;</span><span class="p">]:</span>
+</span><span id="__span-7-37">            <span class="k">if</span> <span class="ow">not</span> <span class="n">is_valid_url</span><span class="p">(</span><span class="n">target</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">is_valid_ip</span><span class="p">(</span><span class="n">target</span><span class="p">):</span>
+</span><span id="__span-7-38">                <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Please enter a valid URL or IP address for the target.&#39;</span><span class="p">}),</span> <span class="mi">400</span>
+</span><span id="__span-7-39">
+</span><span id="__span-7-40">            <span class="nb">print</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+</span><span id="__span-7-41">            <span class="k">if</span> <span class="n">target</span> <span class="o">==</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">:</span>
+</span><span id="__span-7-42">                <span class="n">target</span> <span class="o">=</span> <span class="n">request</span><span class="o">.</span><span class="n">remote_addr</span>
+</span><span id="__span-7-43">            <span class="nb">print</span><span class="p">(</span><span class="n">target</span><span class="p">)</span>
+</span><span id="__span-7-44">
+</span><span id="__span-7-45">        <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-7-46">            <span class="n">pdf_path</span> <span class="o">=</span> <span class="kc">None</span>
+</span><span id="__span-7-47">            <span class="k">if</span> <span class="n">scan_type</span> <span class="o">==</span> <span class="s1">&#39;port_scan&#39;</span><span class="p">:</span>
+</span><span id="__span-7-48">                <span class="n">pdf_path</span> <span class="o">=</span> <span class="n">nmap_scanner</span><span class="o">.</span><span class="n">run_port_scan</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">nmap_options</span><span class="p">,</span> <span class="n">user_id</span><span class="o">=</span><span class="n">current_user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</span><span id="__span-7-49">            <span class="k">elif</span> <span class="n">scan_type</span> <span class="o">==</span> <span class="s1">&#39;tcp_syn_scan&#39;</span><span class="p">:</span>
+</span><span id="__span-7-50">                <span class="n">pdf_path</span> <span class="o">=</span> <span class="n">nmap_scanner</span><span class="o">.</span><span class="n">run_tcp_syn_scan</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">ports</span><span class="o">=</span><span class="n">ports</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">nmap_options</span><span class="p">,</span> <span class="n">user_id</span><span class="o">=</span><span class="n">current_user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</span><span id="__span-7-51">            <span class="k">elif</span> <span class="n">scan_type</span> <span class="o">==</span> <span class="s1">&#39;aggressive_scan&#39;</span><span class="p">:</span>
+</span><span id="__span-7-52">                <span class="n">pdf_path</span> <span class="o">=</span> <span class="n">nmap_scanner</span><span class="o">.</span><span class="n">run_aggressive_scan</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">nmap_options</span><span class="p">,</span> <span class="n">user_id</span><span class="o">=</span><span class="n">current_user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</span><span id="__span-7-53">            <span class="k">elif</span> <span class="n">scan_type</span> <span class="o">==</span> <span class="s1">&#39;os_detection&#39;</span><span class="p">:</span>
+</span><span id="__span-7-54">                <span class="n">pdf_path</span> <span class="o">=</span> <span class="n">nmap_scanner</span><span class="o">.</span><span class="n">run_os_detection</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">nmap_options</span><span class="p">,</span> <span class="n">user_id</span><span class="o">=</span><span class="n">current_user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</span><span id="__span-7-55">            <span class="k">elif</span> <span class="n">scan_type</span> <span class="o">==</span> <span class="s1">&#39;fragmented_scan&#39;</span><span class="p">:</span>
+</span><span id="__span-7-56">                <span class="n">pdf_path</span> <span class="o">=</span> <span class="n">nmap_scanner</span><span class="o">.</span><span class="n">run_fragmented_packet_scan</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">target</span><span class="p">,</span> <span class="n">options</span><span class="o">=</span><span class="n">nmap_options</span><span class="p">,</span> <span class="n">user_id</span><span class="o">=</span><span class="n">current_user</span><span class="o">.</span><span class="n">id</span><span class="p">)</span>
+</span><span id="__span-7-57">
+</span><span id="__span-7-58">            <span class="k">if</span> <span class="n">pdf_path</span><span class="p">:</span>
+</span><span id="__span-7-59">                <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;pdf_path&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="n">pdf_path</span><span class="p">)}),</span> <span class="mi">200</span>
+</span><span id="__span-7-60">            <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-7-61">                <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="s1">&#39;Failed to generate scan report.&#39;</span><span class="p">}),</span> <span class="mi">500</span>
+</span><span id="__span-7-62">
+</span><span id="__span-7-63">        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span><span id="__span-7-64">            <span class="k">return</span> <span class="n">jsonify</span><span class="p">({</span><span class="s1">&#39;error&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)}),</span> <span class="mi">500</span>
+</span><span id="__span-7-65">
+</span><span id="__span-7-66">
+</span><span id="__span-7-67">    <span class="c1"># and so on for other scan categories</span>
+</span></code></pre></div></td></tr></table></div>
+<div class="language-text highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div><pre><span></span><code>It validates that user has the necessary level and authentication
+Provides proper error messages for missing authentication for the type of scans selected.
+</code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong><code>download_report()</code> Route:</strong> Handles requests to download previously generated scan reports.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-8-1"><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">send_from_directory</span><span class="p">,</span> <span class="n">flash</span><span class="p">,</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">url_for</span>
+</span><span id="__span-8-2"><span class="kn">import</span><span class="w"> </span><span class="nn">os</span> <span class="c1">#required to find files on OS</span>
+</span><span id="__span-8-3">
+</span><span id="__span-8-4"><span class="nd">@main_bp</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/download_report/&lt;path:filename&gt;&#39;</span><span class="p">)</span>
+</span><span id="__span-8-5"><span class="nd">@login_required</span>
+</span><span id="__span-8-6"><span class="k">def</span><span class="w"> </span><span class="nf">download_report</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+</span><span id="__span-8-7"><span class="c1"># ... (complex logic to determine the correct report directory) ...</span>
+</span><span id="__span-8-8">    <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">report_path</span><span class="p">):</span>
+</span><span id="__span-8-9">        <span class="k">return</span> <span class="n">send_from_directory</span><span class="p">(</span><span class="n">report_dir</span><span class="p">,</span> <span class="n">filename</span><span class="p">,</span> <span class="n">as_attachment</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</span><span id="__span-8-10">    <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-8-11">        <span class="n">flash</span><span class="p">(</span><span class="s1">&#39;Report not found.&#39;</span><span class="p">,</span> <span class="s1">&#39;danger&#39;</span><span class="p">)</span>
+</span><span id="__span-8-12">        <span class="k">return</span> <span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s1">&#39;main.scan&#39;</span><span class="p">))</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>Has checks at every stage to verify that the scanned file is present before trying to download it.</li>
+<li>Uses complex logic to manage files from a variety of subfolders.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>about()</code> Route:</strong> Renders the "About Us" page.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-9-1"><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">render_template</span>
+</span><span id="__span-9-2">
+</span><span id="__span-9-3"><span class="nd">@main_bp</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/about&#39;</span><span class="p">)</span>
+</span><span id="__span-9-4"><span class="k">def</span><span class="w"> </span><span class="nf">about</span><span class="p">():</span>
+</span><span id="__span-9-5">    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;about.html&#39;</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong><code>pricing()</code> Route:</strong> Renders the "Pricing" page.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-10-1"><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">render_template</span>
+</span><span id="__span-10-2"><span class="kn">from</span><span class="w"> </span><span class="nn">flask_login</span><span class="w"> </span><span class="kn">import</span> <span class="n">current_user</span>
+</span><span id="__span-10-3">
+</span><span id="__span-10-4"><span class="nd">@main_bp</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/pricing&#39;</span><span class="p">)</span>
+</span><span id="__span-10-5"><span class="k">def</span><span class="w"> </span><span class="nf">pricing</span><span class="p">():</span>
+</span><span id="__span-10-6">    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;pricing.html&#39;</span><span class="p">,</span> <span class="n">is_authenticated</span><span class="o">=</span><span class="n">current_user</span><span class="o">.</span><span class="n">is_authenticated</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong><code>contact_us()</code> Route:</strong> Handles the "Contact Us" form submission, including reCAPTCHA verification and sending email notifications.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-11-1"><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">request</span><span class="p">,</span> <span class="n">flash</span><span class="p">,</span> <span class="n">url_for</span><span class="p">,</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">current_app</span><span class="p">,</span> <span class="n">render_template</span>
+</span><span id="__span-11-2"><span class="kn">from</span><span class="w"> </span><span class="nn">flask_mail</span><span class="w"> </span><span class="kn">import</span> <span class="n">Message</span>
+</span><span id="__span-11-3"><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span> <span class="c1">#required to get verification</span>
+</span><span id="__span-11-4"><span class="kn">from</span><span class="w"> </span><span class="nn">app.forms</span><span class="w"> </span><span class="kn">import</span> <span class="n">ContactForm</span>
+</span><span id="__span-11-5">
+</span><span id="__span-11-6"><span class="nd">@main_bp</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/contact_us&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+</span><span id="__span-11-7"><span class="k">def</span><span class="w"> </span><span class="nf">contact_us</span><span class="p">():</span>
+</span><span id="__span-11-8">    <span class="n">form</span> <span class="o">=</span> <span class="n">ContactForm</span><span class="p">()</span>
+</span><span id="__span-11-9">    <span class="c1"># ... (form validation, reCAPTCHA verification, and email sending logic) ...</span>
+</span><span id="__span-11-10">    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;contact_us.html&#39;</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="n">form</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<p>Includes steps to:</p>
+<ul>
+<li>Handle the rendering for the contact us page.</li>
+<li>Validates all parts of the response.</li>
+<li>Sends a message to the client acknowledging receipt.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>request_demo()</code> Route:</strong> Handles the "Request Demo" form submission, including reCAPTCHA verification and sending email notifications.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-12-1"><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">request</span><span class="p">,</span> <span class="n">flash</span><span class="p">,</span> <span class="n">url_for</span><span class="p">,</span> <span class="n">redirect</span><span class="p">,</span> <span class="n">current_app</span><span class="p">,</span> <span class="n">render_template</span>
+</span><span id="__span-12-2"><span class="kn">from</span><span class="w"> </span><span class="nn">flask_mail</span><span class="w"> </span><span class="kn">import</span> <span class="n">Message</span>
+</span><span id="__span-12-3"><span class="kn">import</span><span class="w"> </span><span class="nn">requests</span>
+</span><span id="__span-12-4"><span class="kn">from</span><span class="w"> </span><span class="nn">app.forms</span><span class="w"> </span><span class="kn">import</span> <span class="n">RequestDemoForm</span>
+</span><span id="__span-12-5">
+</span><span id="__span-12-6"><span class="nd">@main_bp</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">&#39;/request_demo&#39;</span><span class="p">,</span> <span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;POST&#39;</span><span class="p">])</span>
+</span><span id="__span-12-7"><span class="k">def</span><span class="w"> </span><span class="nf">request_demo</span><span class="p">():</span>
+</span><span id="__span-12-8">    <span class="n">form</span> <span class="o">=</span> <span class="n">RequestDemoForm</span><span class="p">()</span>
+</span><span id="__span-12-9">    <span class="c1"># ... (similar form handling logic to `contact_us()`) ...</span>
+</span><span id="__span-12-10">    <span class="k">return</span> <span class="n">render_template</span><span class="p">(</span><span class="s1">&#39;request_demo.html&#39;</span><span class="p">,</span> <span class="n">form</span><span class="o">=</span><span class="n">form</span><span class="p">)</span>
+</span></code></pre></div></td></tr></table></div>
+<ul>
+<li>It uses the anti-fraud technique reCAPTCHA.</li>
+<li>sends a message to the system administrator.</li>
+<li>sends a message to the client acknowledging receipt.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li><code>os</code>: For file system operations.</li>
+<li><code>re</code>: For regular expressions (URL validation).</li>
+<li><code>datetime</code>: Unnecessary.</li>
+<li><code>requests</code>: For making HTTP requests to the reCAPTCHA API.</li>
+<li><code>flask</code>: For creating the blueprint and handling routes, templates, requests, and responses.</li>
+<li><code>flask_login</code>: For user authentication.</li>
+<li><code>flask_mail</code>: For sending emails.</li>
+<li><code>.config</code>, <code>.extensions</code>, <code>.forms</code>, <code>.models</code>, <code>.scanners</code> (and submodules within <code>.scanners</code>): Internal application modules.</li>
+</ul>
+<p><strong>Configuration:</strong></p>
+<ul>
+<li><strong>Report Directories:</strong> The script relies on several directory constants, such as <code>NMAP_REPORT_BASE</code>, <code>SSL_REPORT_BASE</code>, etc., to determine where scan reports are stored.  Ensure these paths are correctly configured based on your project structure.</li>
+<li><strong>reCAPTCHA Keys:</strong> The <code>RECAPTCHA_PRIVATE_KEY</code> setting in the Flask application configuration is required to verify reCAPTCHA responses.</li>
+<li><strong>Email Settings:</strong> The <code>MAIL_*</code> settings in the Flask application configuration are required for sending email notifications.</li>
+<li>
+<p><strong>MOBSF API Keys:</strong> Ensure that you have set and configured mobsf_api_key.</p>
+<p><code>mobsf_api_url = current_app.config.get('MOBSF_API_URL')</code></p>
+<p><code>mobsf_api_key = current_app.config.get('MOBSF_API_KEY')</code></p>
+</li>
+</ul>
+<p><strong>Security Considerations:</strong></p>
+<ul>
+<li><strong>Authentication:</strong> The <code>/scan</code> and <code>/download_report</code> routes require user authentication, preventing unauthorized access to scanning and report download functionality.</li>
+<li><strong>Input Validation:</strong> The script validates URLs and IP addresses to prevent potential injection attacks. However, robust input sanitization and escaping should also be implemented in the templates.</li>
+<li><strong>File Handling:</strong> The script handles file uploads. Careful file type validation and size limits are essential to prevent malicious uploads.</li>
+<li><strong>Error Handling:</strong> The script includes error handling for various operations, such as database interactions and API calls. However, detailed error logging and reporting mechanisms should be implemented to improve debugging and security monitoring.</li>
+<li><strong>reCAPTCHA:</strong> The script uses reCAPTCHA to mitigate bot submissions for the contact and demo request forms.</li>
+<li><strong>Rate Limiting:</strong> Consider adding rate limiting to prevent abuse of the scanning and report download features.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -9,8 +9,10 @@
       
       
       
+        <link rel="prev" href="../12_views/">
       
-        <link rel="next" href="..">
+      
+        <link rel="next" href="../14_main/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>Table of Contents - VulnScanAI Documentation</title>
+        <title>init - VulnScanAI Documentation</title>
       
     
     
@@ -60,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#table-of-contents" class="md-skip">
+        <a href="#file-views__init__py" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Table of Contents
+              init
             
           </span>
         </div>
@@ -189,19 +191,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../toc/" class="md-nav__link">
         
   
   
@@ -212,7 +205,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -243,18 +235,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -270,7 +264,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             VulnScanAI
@@ -281,18 +275,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
@@ -308,7 +304,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             App Directory
@@ -618,18 +614,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
@@ -645,7 +643,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1_3">
             <span class="md-nav__icon md-icon"></span>
             Views Directory
@@ -679,10 +677,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../13_views_init/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -693,6 +700,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1192,46 +1200,44 @@
 
 
 
-<h1 id="table-of-contents">Table of Contents</h1>
+<h1 id="file-views__init__py">File: <code>views/__init__.py</code></h1>
+<p><strong>Purpose:</strong> This file acts as the initialization module for the <code>views</code> package. Its primary responsibility is to import and expose Flask blueprint instances, enabling organized and modular handling of application routes and views.</p>
+<p><strong>Overview:</strong></p>
+<p>The <code>views/__init__.py</code> file performs these core functions:</p>
 <ul>
-<li><a href="../">Home</a></li>
-<li><a href="../01_app/">App Directory</a></li>
-<li><a href="../02_scanners/">Scanners Directory</a><ul>
-<li><a href="../03_nmap_scanner/">Nmap Scanner</a></li>
-<li><a href="../04_nikto_scanner/">Nikto Scanner</a></li>
-<li><a href="../05_zap_scanner/">ZAP Scanner</a></li>
-<li><a href="../06_mobsf_scanner/">MobSF Scanner</a></li>
-<li><a href="../07_sqlmap_scanner/">SQLMap Scanner</a></li>
-<li><a href="../08_ssl_scanner/">SSL Scanner</a></li>
-<li><a href="../09_prowler_scanner_aws/">Prowler AWS Scanner</a></li>
-<li><a href="../10_prowler_scanner_gcp/">Prowler GCP Scanner</a></li>
-<li><a href="../11_cloudsploit_scanner_azure/">CloudSploit Azure Scanner</a></li>
+<li><strong>Blueprint Imports:</strong> Imports blueprint objects that are defined in separate modules within the <code>views</code> package. These imported blueprints are <code>main_bp</code> (from <code>main.py</code>), <code>auth_bp</code> (from <code>auth.py</code>), <code>payments_bp</code> (from <code>payments.py</code>), and <code>genai_bp</code> (from <code>genai.py</code>).</li>
+<li><strong>Blueprint Exposure:</strong> Defines the <code>all</code> variable, which serves as a list specifying the blueprints that should be made publicly accessible when using a wildcard import (<code>from views import *</code>). This ensures controlled access to the package's contents.</li>
 </ul>
+<p><strong>Key Components and Functionality:</strong></p>
+<ul>
+<li>
+<p><strong>Blueprint Imports:</strong> The file imports <code>Blueprint</code> instances from their respective modules. <code>Blueprint</code> objects in Flask are used to organize a group of related views and other code.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="kn">from</span><span class="w"> </span><span class="nn">.main</span><span class="w"> </span><span class="kn">import</span> <span class="n">main_bp</span>
+</span><span id="__span-0-2"><span class="kn">from</span><span class="w"> </span><span class="nn">.auth</span><span class="w"> </span><span class="kn">import</span> <span class="n">auth_bp</span>
+</span><span id="__span-0-3"><span class="kn">from</span><span class="w"> </span><span class="nn">.payments</span><span class="w"> </span><span class="kn">import</span> <span class="n">payments_bp</span>
+</span><span id="__span-0-4"><span class="kn">from</span><span class="w"> </span><span class="nn">.genai</span><span class="w"> </span><span class="kn">import</span> <span class="n">genai_bp</span>
+</span></code></pre></div></td></tr></table></div>
 </li>
-<li><a href="../12_views/">Views Directory</a><ul>
-<li><a href="../13_views_init/">init</a></li>
-<li><a href="../14_main/">Main</a></li>
-<li><a href="../15_auth/">Authentication</a></li>
-<li><a href="../16_genai/">GenAI</a></li>
-<li><a href="../17_analyze_report_ai/">AI Report Analysis</a></li>
-<li><a href="../18_payments/">Payments</a></li>
-</ul>
+<li>
+<p><strong><code>all</code> Variable:</strong>  This list defines the public API of the <code>views</code> package.  It lists the names of the blueprints that are intended for external use. This enforces encapsulation by preventing unwanted names from being imported when using a wildcard import.  Using <code>__all__</code> (double underscore) instead of <code>all</code> is more common for defining the public API of a module, though <code>all</code> will also work.</p>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">1</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="nb">all</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;main_bp&#39;</span><span class="p">,</span> <span class="s1">&#39;auth_bp&#39;</span><span class="p">,</span> <span class="s1">&#39;payments_bp&#39;</span><span class="p">,</span> <span class="s1">&#39;genai_bp&#39;</span><span class="p">]</span>
+</span></code></pre></div></td></tr></table></div>
 </li>
-<li><a href="../19_templates/">Templates Directory</a><ul>
-<li><a href="../20_base/">Base</a></li>
-<li><a href="../21_home/">Home</a></li>
-<li><a href="../22_about/">About</a></li>
-<li><a href="../23_contact_us/">Contact Us</a></li>
-<li><a href="../24_request_demo/">Request Demo</a></li>
-<li><a href="../25_login/">Login</a></li>
-<li><a href="../26_profile/">Profile</a></li>
 </ul>
-</li>
-<li><a href="../config/">config</a></li>
-<li><a href="../extensions/">extensions</a></li>
-<li><a href="../forms/">forms</a></li>
-<li><a href="../models/">models</a></li>
+<p><strong>Explanation of Blueprints:</strong></p>
+<ul>
+<li><code>main_bp</code>: Handles core application views accessible to all users, such as the homepage and general information pages.  This Blueprint is defined in the <code>main.py</code> module.</li>
+<li><code>auth_bp</code>: Responsible for managing user authentication-related views, including login, registration, password management, and profile settings. This Blueprint is defined in the <code>auth.py</code> module.</li>
+<li><code>payments_bp</code>: Handles payment-related views, subscription management, and integration with payment gateways. This Blueprint is defined in the <code>payments.py</code> module.</li>
+<li><code>genai_bp</code>: Manages views associated with generative AI functionalities in the application. This Blueprint is defined in the <code>genai.py</code> module.</li>
 </ul>
+<p><strong>Package Structure:</strong></p>
+<p>The <code>views</code> package is structured to promote code organization and separation of concerns. Each core area of the application (main views, authentication, payments, AI) has its dedicated module with a corresponding Blueprint. The <code>__init__.py</code> file consolidates these Blueprints and defines the package's public API.</p>
+<p><strong>How it Works:</strong></p>
+<p>When the <code>views</code> package is imported, the Python interpreter executes the code within <code>views/__init__.py</code>. This results in the importing of the Blueprint instances and the creation of the <code>all</code> list, thereby making those blueprints ready for registration within the main Flask application instance. The main Flask app would then use <code>app.register_blueprint()</code> to activate these blueprints and make their routes available.</p>
 
 
 

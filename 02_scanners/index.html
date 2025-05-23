@@ -9,8 +9,10 @@
       
       
       
+        <link rel="prev" href="../01_app/">
       
-        <link rel="next" href="..">
+      
+        <link rel="next" href="../03_nmap_scanner/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>Table of Contents - VulnScanAI Documentation</title>
+        <title>Overview - VulnScanAI Documentation</title>
       
     
     
@@ -60,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#table-of-contents" class="md-skip">
+        <a href="#directory-appscanners" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Table of Contents
+              Overview
             
           </span>
         </div>
@@ -189,19 +191,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../toc/" class="md-nav__link">
         
   
   
@@ -212,7 +205,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -243,18 +235,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -270,7 +264,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             VulnScanAI
@@ -281,18 +275,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
@@ -308,7 +304,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             App Directory
@@ -342,18 +338,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" checked>
         
           
           <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
@@ -369,7 +367,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1_2">
             <span class="md-nav__icon md-icon"></span>
             Scanners Directory
@@ -380,10 +378,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../02_scanners/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -394,6 +401,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1192,45 +1200,90 @@
 
 
 
-<h1 id="table-of-contents">Table of Contents</h1>
+<h1 id="directory-appscanners">Directory: <code>app/scanners</code></h1>
+<p><strong>Purpose:</strong> This directory contains the code for integrating with different vulnerability scanning tools. Each file in this directory represents a scanner integration. The scanners are designed to be modular and easily extensible. They provide functions to run the scans and return reports (usually PDFs).</p>
+<p><strong>Files:</strong></p>
 <ul>
-<li><a href="../">Home</a></li>
-<li><a href="../01_app/">App Directory</a></li>
-<li><a href="../02_scanners/">Scanners Directory</a><ul>
-<li><a href="../03_nmap_scanner/">Nmap Scanner</a></li>
-<li><a href="../04_nikto_scanner/">Nikto Scanner</a></li>
-<li><a href="../05_zap_scanner/">ZAP Scanner</a></li>
-<li><a href="../06_mobsf_scanner/">MobSF Scanner</a></li>
-<li><a href="../07_sqlmap_scanner/">SQLMap Scanner</a></li>
-<li><a href="../08_ssl_scanner/">SSL Scanner</a></li>
-<li><a href="../09_prowler_scanner_aws/">Prowler AWS Scanner</a></li>
-<li><a href="../10_prowler_scanner_gcp/">Prowler GCP Scanner</a></li>
-<li><a href="../11_cloudsploit_scanner_azure/">CloudSploit Azure Scanner</a></li>
+<li>
+<p><code>nmap_scanner.py</code>:</p>
+<ul>
+<li><strong>Description:</strong> Integrates with the Nmap port scanner to perform network reconnaissance and identify open ports and services. Generates reports in PDF format.</li>
+<li><strong>Key Functionality:</strong> Executes Nmap with various scan types, parses the output, and generates a PDF report with a custom header/logo.</li>
+<li><strong>Dependencies:</strong> <code>subprocess</code>, <code>os</code>, <code>reportlab</code>, <code>flask</code></li>
 </ul>
 </li>
-<li><a href="../12_views/">Views Directory</a><ul>
-<li><a href="../13_views_init/">init</a></li>
-<li><a href="../14_main/">Main</a></li>
-<li><a href="../15_auth/">Authentication</a></li>
-<li><a href="../16_genai/">GenAI</a></li>
-<li><a href="../17_analyze_report_ai/">AI Report Analysis</a></li>
-<li><a href="../18_payments/">Payments</a></li>
+<li>
+<p><code>nikto_scanner.py</code>:</p>
+<ul>
+<li><strong>Description:</strong> Integrates with the Nikto web server scanner to identify potential vulnerabilities in web servers. Generates reports in PDF format.</li>
+<li><strong>Key Functionality:</strong> Executes Nikto, removes scan summary from HTML output, and converts to PDF with a custom header/logo. Supports authenticated scans.</li>
+<li><strong>Dependencies:</strong> <code>os</code>, <code>subprocess</code>, <code>pdfkit</code>, <code>bs4</code>, <code>fitz</code>, <code>flask</code></li>
 </ul>
 </li>
-<li><a href="../19_templates/">Templates Directory</a><ul>
-<li><a href="../20_base/">Base</a></li>
-<li><a href="../21_home/">Home</a></li>
-<li><a href="../22_about/">About</a></li>
-<li><a href="../23_contact_us/">Contact Us</a></li>
-<li><a href="../24_request_demo/">Request Demo</a></li>
-<li><a href="../25_login/">Login</a></li>
-<li><a href="../26_profile/">Profile</a></li>
+<li>
+<p><code>zap_scanner.py</code>:</p>
+<ul>
+<li><strong>Description:</strong> Integrates with the OWASP ZAP proxy to perform dynamic application security testing (DAST) and generate reports in PDF format.</li>
+<li><strong>Key Functionality:</strong> Starts ZAP, configures it, runs a scan against a target URL (supports authenticated scans), and retrieves the report, converting it to PDF with a custom header/logo.</li>
+<li><strong>Dependencies:</strong> <code>os</code>, <code>subprocess</code>, <code>datetime</code>, <code>pdfkit</code>, <code>tempfile</code>, <code>time</code>, <code>fitz</code>, <code>flask</code></li>
 </ul>
 </li>
-<li><a href="../config/">config</a></li>
-<li><a href="../extensions/">extensions</a></li>
-<li><a href="../forms/">forms</a></li>
-<li><a href="../models/">models</a></li>
+<li>
+<p><code>mobsf_scanner.py</code>:</p>
+<ul>
+<li><strong>Description:</strong> Integrates with the Mobile Security Framework (MoBSF) to analyze mobile application binaries (APKs and IPAs) and generate reports.</li>
+<li><strong>Key Functionality:</strong> Uploads app binaries to the MobSF API, initiates scans, and fetches the PDF report, adding a custom logo/header.</li>
+<li><strong>Dependencies:</strong> <code>requests</code>, <code>os</code>, <code>fitz</code>, <code>flask</code></li>
+</ul>
+</li>
+<li>
+<p><code>sqlmap_scanner.py</code>:</p>
+<ul>
+<li><strong>Description:</strong> Integrates with the sqlmap SQL injection tool to identify and exploit SQL injection vulnerabilities, generating reports in PDF format.</li>
+<li><strong>Key Functionality:</strong> Executes sqlmap against a target URL, and generates a PDF report with a custom header/logo.</li>
+<li><strong>Dependencies:</strong> <code>subprocess</code>, <code>os</code>, <code>glob</code>, <code>reportlab</code>, <code>flask</code></li>
+</ul>
+</li>
+<li>
+<p><code>ssl_scanner.py</code>:</p>
+<ul>
+<li><strong>Description:</strong> Performs SSL/TLS security checks on a target host, generating reports in PDF format.</li>
+<li><strong>Key Functionality:</strong> Executes <code>sslscan</code> and generates a PDF report with a custom header/logo.</li>
+<li><strong>Dependencies:</strong> <code>subprocess</code>, <code>os</code>, <code>reportlab</code>, <code>flask</code></li>
+</ul>
+</li>
+<li>
+<p><code>cloudsploit_scanner_azure.py</code>:</p>
+<ul>
+<li><strong>Description:</strong> Integrates with CloudSploit to perform security audits on Azure cloud environments, generating reports in PDF format.</li>
+<li><strong>Key Functionality:</strong> Executes CloudSploit scans, converts CSV output to HTML, then to PDF, and adds a logo. Manages Azure credentials using a temporary file.</li>
+<li><strong>Dependencies:</strong> <code>subprocess</code>, <code>os</code>, <code>csv</code>, <code>json</code>, <code>pdfkit</code>, <code>fitz</code>, <code>flask</code></li>
+</ul>
+</li>
+<li>
+<p><code>prowler_scanner_gcp.py</code>:</p>
+<ul>
+<li><strong>Description:</strong> Integrates with Prowler to perform security assessments in GCP environments, generating reports in PDF format.</li>
+<li><strong>Key Functionality:</strong> Executes Prowler using a service account key file, processes the HTML output to remove sensitive info, and converts it to PDF with a custom header/logo.</li>
+<li><strong>Dependencies:</strong> <code>subprocess</code>, <code>os</code>, <code>tempfile</code>, <code>json</code>, <code>bs4</code>, <code>pdfkit</code>, <code>fitz</code>, <code>flask</code></li>
+</ul>
+</li>
+<li>
+<p><code>prowler_scanner_aws.py</code>:</p>
+<ul>
+<li><strong>Description:</strong> Integrates with Prowler to perform security assessments in AWS environments, generating reports in PDF format.</li>
+<li><strong>Key Functionality:</strong> Executes Prowler with provided AWS credentials, processes the HTML output to remove sensitive info, and converts it to PDF with a custom header/logo.</li>
+<li><strong>Dependencies:</strong> <code>subprocess</code>, <code>os</code>, <code>bs4</code>, <code>pdfkit</code>, <code>fitz</code>, <code>flask</code></li>
+</ul>
+</li>
+<li>
+<p><code>__init__.py</code>:</p>
+<ul>
+<li><strong>Description:</strong> Makes the <code>scanners</code> directory a Python package.</li>
+<li><strong>Key Functionality:</strong> (Currently empty - likely would contain import statements to make the scanner modules easily accessible.)</li>
+<li><strong>Dependencies:</strong> None</li>
+</ul>
+</li>
 </ul>
 
 

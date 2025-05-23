@@ -9,8 +9,10 @@
       
       
       
+        <link rel="prev" href="..">
       
-        <link rel="next" href="..">
+      
+        <link rel="next" href="../02_scanners/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>Table of Contents - VulnScanAI Documentation</title>
+        <title>Overview - VulnScanAI Documentation</title>
       
     
     
@@ -60,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#table-of-contents" class="md-skip">
+        <a href="#directory-app" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Table of Contents
+              Overview
             
           </span>
         </div>
@@ -189,19 +191,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../toc/" class="md-nav__link">
         
   
   
@@ -212,7 +205,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -243,18 +235,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -270,7 +264,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             VulnScanAI
@@ -281,18 +275,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
@@ -308,7 +304,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             App Directory
@@ -319,10 +315,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../01_app/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -333,6 +338,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1192,45 +1198,133 @@
 
 
 
-<h1 id="table-of-contents">Table of Contents</h1>
+<h1 id="directory-app">Directory: <code>app</code></h1>
+<p><strong>Purpose:</strong> This directory forms the core of the VulnScanAI Flask web application. It houses essential components like configuration, data models, user interface templates, vulnerability scanners, and route handling logic, enabling the application's functionality.</p>
+<p><strong>Overview:</strong></p>
+<p>The <code>app</code> directory is structured to promote modularity and maintainability. Key aspects include:</p>
 <ul>
-<li><a href="../">Home</a></li>
-<li><a href="../01_app/">App Directory</a></li>
-<li><a href="../02_scanners/">Scanners Directory</a><ul>
-<li><a href="../03_nmap_scanner/">Nmap Scanner</a></li>
-<li><a href="../04_nikto_scanner/">Nikto Scanner</a></li>
-<li><a href="../05_zap_scanner/">ZAP Scanner</a></li>
-<li><a href="../06_mobsf_scanner/">MobSF Scanner</a></li>
-<li><a href="../07_sqlmap_scanner/">SQLMap Scanner</a></li>
-<li><a href="../08_ssl_scanner/">SSL Scanner</a></li>
-<li><a href="../09_prowler_scanner_aws/">Prowler AWS Scanner</a></li>
-<li><a href="../10_prowler_scanner_gcp/">Prowler GCP Scanner</a></li>
-<li><a href="../11_cloudsploit_scanner_azure/">CloudSploit Azure Scanner</a></li>
+<li><strong>Configuration Management:</strong> Centralized settings for different environments (development, production).</li>
+<li><strong>Data Modeling:</strong> Database models representing users, subscriptions, and scan results.</li>
+<li><strong>User Interface Rendering:</strong> HTML templates for presenting information to the user.</li>
+<li><strong>Vulnerability Scanning Integrations:</strong> Modules for interacting with external security scanning tools.</li>
+<li><strong>Route Handling:</strong> Logic for managing user requests and application behavior.</li>
+</ul>
+<p><strong>Subdirectories:</strong></p>
+<ul>
+<li>
+<p><strong><code>reports/</code>:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Stores generated reports from various vulnerability scanners.</li>
+<li><strong>Content:</strong> Typically contains PDF or HTML files.</li>
+<li><em>(See dedicated documentation for the <code>reports</code> directory)</em></li>
 </ul>
 </li>
-<li><a href="../12_views/">Views Directory</a><ul>
-<li><a href="../13_views_init/">init</a></li>
-<li><a href="../14_main/">Main</a></li>
-<li><a href="../15_auth/">Authentication</a></li>
-<li><a href="../16_genai/">GenAI</a></li>
-<li><a href="../17_analyze_report_ai/">AI Report Analysis</a></li>
-<li><a href="../18_payments/">Payments</a></li>
+<li>
+<p><strong><code>scanners/</code>:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Contains the integration code for different vulnerability scanning tools. Each scanner has its own module to encapsulate its specific logic.</li>
+<li><strong>Example Scanners:</strong> Nmap, Nikto, ZAP, MobSF, SQLMap, SSLScan, Prowler (AWS &amp; GCP), CloudSploit (Azure).</li>
+<li><em>(See dedicated documentation for the <code>scanners</code> directory)</em></li>
 </ul>
 </li>
-<li><a href="../19_templates/">Templates Directory</a><ul>
-<li><a href="../20_base/">Base</a></li>
-<li><a href="../21_home/">Home</a></li>
-<li><a href="../22_about/">About</a></li>
-<li><a href="../23_contact_us/">Contact Us</a></li>
-<li><a href="../24_request_demo/">Request Demo</a></li>
-<li><a href="../25_login/">Login</a></li>
-<li><a href="../26_profile/">Profile</a></li>
+<li>
+<p><strong><code>static/</code>:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Stores static assets served directly to the client's browser.</li>
+<li><strong>Content:</strong> CSS stylesheets, JavaScript files, images (including the company logo), and potentially other static files like pre-generated PDFs.</li>
 </ul>
 </li>
-<li><a href="../config/">config</a></li>
-<li><a href="../extensions/">extensions</a></li>
-<li><a href="../forms/">forms</a></li>
-<li><a href="../models/">models</a></li>
+<li>
+<p><strong><code>templates/</code>:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Contains HTML templates used to render the application's user interface.</li>
+<li><strong>Technology:</strong> Utilizes the Jinja2 templating engine for dynamic content generation.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>uploads/</code>:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Stores files uploaded by users, especially PDF files for Generative AI Analysis or other processing.</li>
+<li><strong>Note:</strong> Requires careful handling to ensure security and prevent malicious uploads.</li>
+</ul>
+</li>
+<li>
+<p><strong><code>views/</code>:</strong></p>
+<ul>
+<li><strong>Purpose:</strong> Contains view functions that handle incoming web requests and generate responses. These functions are the glue between the user interface, data models, and application logic.</li>
+<li><strong>Route Handling:</strong> Defines routes (URLs) and associated logic using Flask's routing mechanisms.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Files:</strong></p>
+<ul>
+<li>
+<p><strong><code>config.py</code>:</strong></p>
+<ul>
+<li><strong>Description:</strong> Centralized configuration settings for the Flask application.</li>
+<li><strong>Functionality:</strong><ul>
+<li>Loads configuration variables from environment variables using <code>os.environ.get()</code>.</li>
+<li>Defines settings like <code>SECRET_KEY</code>, <code>SQLALCHEMY_DATABASE_URI</code>, <code>MAIL_*</code> (for email), <code>RECAPTCHA_*</code> (for reCAPTCHA), <code>GEMINI_API_KEY</code>, <code>MOBSF_API_*</code>, <code>PERMANENT_SESSION_LIFETIME</code>, and <code>PAYPAL_*</code>.</li>
+</ul>
+</li>
+<li><strong>Dependencies:</strong> <code>os</code>, <code>dotenv</code></li>
+</ul>
+</li>
+<li>
+<p><strong><code>extensions.py</code>:</strong></p>
+<ul>
+<li><strong>Description:</strong> Initializes and configures Flask extensions to promote code reuse and separation of concerns.</li>
+<li><strong>Functionality:</strong><ul>
+<li>Creates instances of <code>SQLAlchemy()</code> (for database interactions) and <code>Mail()</code> (for sending emails).</li>
+<li>Provides a central point to access database and mail functionalities throughout the application.</li>
+</ul>
+</li>
+<li><strong>Dependencies:</strong> <code>flask_sqlalchemy</code>, <code>flask_mail</code></li>
+</ul>
+</li>
+<li>
+<p><strong><code>forms.py</code>:</strong></p>
+<ul>
+<li><strong>Description:</strong> Defines forms for user input validation and processing, leveraging Flask-WTF.</li>
+<li><strong>Functionality:</strong><ul>
+<li>Defines form classes (<code>RegistrationForm</code>, <code>LoginForm</code>, etc.) with WTForms fields and validators.</li>
+<li>Includes custom validators (e.g., <code>password_strength</code>) for specific requirements.</li>
+<li>Handles CSRF protection.</li>
+</ul>
+</li>
+<li><strong>Dependencies:</strong> <code>flask_wtf</code>, <code>wtforms</code>, <code>wtforms.validators</code></li>
+</ul>
+</li>
+<li>
+<p><strong><code>__init__.py</code>:</strong></p>
+<ul>
+<li><strong>Description:</strong> Makes the <code>app</code> directory a Python package and initializes the Flask application. It bootstraps the application environment.</li>
+<li><strong>Functionality:</strong><ul>
+<li>Creates the Flask application instance (<code>app = Flask(__name__)</code>).</li>
+<li>Loads configuration from <code>config.py</code>.</li>
+<li>Initializes Flask extensions using <code>db.init_app(app)</code> and <code>mail.init_app(app)</code>.</li>
+<li>Configures Flask-Login (<code>login_manager</code>).</li>
+<li>Registers blueprints for views.</li>
+<li>Implements Content Security Policy (CSP) for enhanced security.</li>
+<li>Uses <code>ProxyFix</code> middleware for proper proxy handling.</li>
+</ul>
+</li>
+<li><strong>Dependencies:</strong> <code>flask</code>, <code>flask_login</code>, <code>werkzeug</code>, <code>os</code>, <code>base64</code>, <code>.config</code>, <code>.extensions</code>, <code>.views</code></li>
+</ul>
+</li>
+<li>
+<p><strong><code>models.py</code>:</strong></p>
+<ul>
+<li><strong>Description:</strong> Defines the data models (database tables) used by the application.</li>
+<li><strong>Functionality:</strong><ul>
+<li>Defines classes that inherit from <code>db.Model</code> to represent tables in the database.</li>
+<li>Models include <code>User</code>, <code>Subscription</code>, <code>Payment</code>, <code>LoginDetail</code>, and <code>Access</code>.</li>
+<li>Manages relationships between models (e.g., user-subscription, user-payments).</li>
+</ul>
+</li>
+<li><strong>Dependencies:</strong> <code>flask_sqlalchemy</code>, <code>flask_login</code>, <code>datetime</code></li>
+</ul>
+</li>
 </ul>
 
 

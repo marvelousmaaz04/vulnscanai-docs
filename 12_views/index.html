@@ -9,8 +9,10 @@
       
       
       
+        <link rel="prev" href="../11_cloudsploit_scanner_azure/">
       
-        <link rel="next" href="..">
+      
+        <link rel="next" href="../13_views_init/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -18,7 +20,7 @@
     
     
       
-        <title>Table of Contents - VulnScanAI Documentation</title>
+        <title>Overview - VulnScanAI Documentation</title>
       
     
     
@@ -60,7 +62,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#table-of-contents" class="md-skip">
+        <a href="#directory-appviews" class="md-skip">
           Skip to content
         </a>
       
@@ -96,7 +98,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Table of Contents
+              Overview
             
           </span>
         </div>
@@ -189,19 +191,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../toc/" class="md-nav__link">
         
   
   
@@ -212,7 +205,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -243,18 +235,20 @@
       
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -270,7 +264,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             VulnScanAI
@@ -281,18 +275,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
         
           
           <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
@@ -308,7 +304,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1">
             <span class="md-nav__icon md-icon"></span>
             App Directory
@@ -618,18 +614,20 @@
                 
   
   
+    
   
   
+  
     
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
@@ -645,7 +643,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_1_3">
             <span class="md-nav__icon md-icon"></span>
             Views Directory
@@ -656,10 +654,19 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../12_views/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -670,6 +677,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -1192,45 +1200,58 @@
 
 
 
-<h1 id="table-of-contents">Table of Contents</h1>
+<h1 id="directory-appviews">Directory: <code>app/views</code></h1>
+<p><strong>Purpose:</strong> This directory contains the view functions (route handlers) that define the application's behavior. These functions handle user requests, interact with models, and render HTML templates.</p>
+<p><strong>Files:</strong></p>
 <ul>
-<li><a href="../">Home</a></li>
-<li><a href="../01_app/">App Directory</a></li>
-<li><a href="../02_scanners/">Scanners Directory</a><ul>
-<li><a href="../03_nmap_scanner/">Nmap Scanner</a></li>
-<li><a href="../04_nikto_scanner/">Nikto Scanner</a></li>
-<li><a href="../05_zap_scanner/">ZAP Scanner</a></li>
-<li><a href="../06_mobsf_scanner/">MobSF Scanner</a></li>
-<li><a href="../07_sqlmap_scanner/">SQLMap Scanner</a></li>
-<li><a href="../08_ssl_scanner/">SSL Scanner</a></li>
-<li><a href="../09_prowler_scanner_aws/">Prowler AWS Scanner</a></li>
-<li><a href="../10_prowler_scanner_gcp/">Prowler GCP Scanner</a></li>
-<li><a href="../11_cloudsploit_scanner_azure/">CloudSploit Azure Scanner</a></li>
+<li>
+<p><code>analyze_report_ai.py</code>:</p>
+<ul>
+<li><strong>Description:</strong> Analyzes scan reports using the Google Gemini model. Extracts text from PDFs, masks PII, and generates insights.</li>
+<li><strong>Key Functionality:</strong> Uses <code>GeminiReportAnalyzer</code> class to handle PDF processing, PII masking, and Gemini API interactions.</li>
+<li><strong>Dependencies:</strong> <code>google.generativeai</code>, <code>pypdf</code>, <code>flask</code>, <code>re</code></li>
 </ul>
 </li>
-<li><a href="../12_views/">Views Directory</a><ul>
-<li><a href="../13_views_init/">init</a></li>
-<li><a href="../14_main/">Main</a></li>
-<li><a href="../15_auth/">Authentication</a></li>
-<li><a href="../16_genai/">GenAI</a></li>
-<li><a href="../17_analyze_report_ai/">AI Report Analysis</a></li>
-<li><a href="../18_payments/">Payments</a></li>
+<li>
+<p><code>auth.py</code>:</p>
+<ul>
+<li><strong>Description:</strong> Handles user authentication routes (login, registration, password reset, update password, email verification, etc.).</li>
+<li><strong>Key Functionality:</strong> Manages user registration, login, logout, password reset, and email verification using Flask-Login, <code>bcrypt</code>, and itsdangerous for secure token generation and email verification process.</li>
+<li><strong>Dependencies:</strong> <code>flask</code>, <code>flask_login</code>, <code>bcrypt</code>, <code>forms</code>, <code>models</code>, <code>flask_mail</code>, <code>itsdangerous</code>, <code>requests</code>, <code>os</code></li>
 </ul>
 </li>
-<li><a href="../19_templates/">Templates Directory</a><ul>
-<li><a href="../20_base/">Base</a></li>
-<li><a href="../21_home/">Home</a></li>
-<li><a href="../22_about/">About</a></li>
-<li><a href="../23_contact_us/">Contact Us</a></li>
-<li><a href="../24_request_demo/">Request Demo</a></li>
-<li><a href="../25_login/">Login</a></li>
-<li><a href="../26_profile/">Profile</a></li>
+<li>
+<p><code>genai.py</code>:</p>
+<ul>
+<li><strong>Description:</strong> Contains routes and functions for interacting with the Gemini AI model for security report analysis.</li>
+<li><strong>Key Functionality:</strong> Handles uploading reports, analyzing them with Gemini, and managing chat sessions for follow-up questions.</li>
+<li><strong>Dependencies:</strong> <code>flask</code>, <code>flask_login</code>, <code>google.generativeai</code>, <code>werkzeug</code>, <code>os</code>, <code>logging</code>, <code>app.analyze_report_ai</code></li>
 </ul>
 </li>
-<li><a href="../config/">config</a></li>
-<li><a href="../extensions/">extensions</a></li>
-<li><a href="../forms/">forms</a></li>
-<li><a href="../models/">models</a></li>
+<li>
+<p><code>main.py</code>:</p>
+<ul>
+<li><strong>Description:</strong> Contains the main application routes (home page, profile page, about page, scan page, contact page, pricing page, download report page, etc.).</li>
+<li><strong>Key Functionality:</strong> Handles core web application routes, manages vulnerability scans, provides report downloads, and facilitates user communication via contact forms.</li>
+<li><strong>Dependencies:</strong> <code>flask</code>, <code>flask_login</code>, <code>werkzeug</code>, <code>os</code>, <code>requests</code>, <code>app.scanners.*</code>, <code>app.forms</code>, <code>app.models</code>, <code>app.analyze_report_ai</code>, <code>flask_mail</code>, <code>logging</code>, <code>json</code></li>
+</ul>
+</li>
+<li>
+<p><code>payments.py</code>:</p>
+<ul>
+<li><strong>Description:</strong> Handles payment-related functionality using the PayPal API (creates orders, captures payments, handles cancellations, updates subscriptions).</li>
+<li><strong>Key Functionality:</strong> Integrates with PayPal to create and capture payments, manage user subscriptions, and record payment transactions in the database. Includes retry logic and error handling for API interactions.</li>
+<li><strong>Dependencies:</strong> <code>flask</code>, <code>flask_login</code>, <code>app.extensions</code>, <code>app.models</code>, <code>datetime</code>, <code>os</code>, <code>requests</code>, <code>logging</code>, <code>uuid</code>, <code>time</code>, <code>random</code>, <code>sqlalchemy.exc</code></li>
+</ul>
+</li>
+<li>
+<p><code>__init__.py</code>:</p>
+<ul>
+<li><strong>Description:</strong> Makes the <code>views</code> directory a Python package.</li>
+<li><strong>Key Functionality:</strong> Registers blueprints for the view modules (e.g., <code>auth</code>, <code>main</code>, <code>payments</code>, <code>genai</code>).</li>
+<li><strong>Dependencies:</strong> <code>flask</code></li>
+</ul>
+</li>
 </ul>
 
 

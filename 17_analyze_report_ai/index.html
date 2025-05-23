@@ -1,0 +1,1509 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../16_genai/">
+      
+      
+        <link rel="next" href="../18_payments/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.14">
+    
+    
+      
+        <title>AI Report Analysis - VulnScanAI Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.342714a4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#file-analyze_report_aipy" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="VulnScanAI Documentation" class="md-header__button md-logo" aria-label="VulnScanAI Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            VulnScanAI Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              AI Report Analysis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="VulnScanAI Documentation" class="md-nav__button md-logo" aria-label="VulnScanAI Documentation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    VulnScanAI Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../toc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Table of Contents
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    VulnScanAI
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            VulnScanAI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    App Directory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            App Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01_app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_2" id="__nav_3_1_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Scanners Directory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Scanners Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02_scanners/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03_nmap_scanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nmap Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04_nikto_scanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Nikto Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05_zap_scanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    ZAP Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06_mobsf_scanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    MobSF Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07_sqlmap_scanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SQLMap Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../08_ssl_scanner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    SSL Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09_prowler_scanner_aws/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prowler AWS Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10_prowler_scanner_gcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Prowler GCP Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../11_cloudsploit_scanner_azure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    CloudSploit Azure Scanner
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_3" id="__nav_3_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Views Directory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Views Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../12_views/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../13_views_init/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    init
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../14_main/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Main
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../15_auth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Authentication
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../16_genai/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    GenAI
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    AI Report Analysis
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../18_payments/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Payments
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_1_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1_4" id="__nav_3_1_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    Templates Directory
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_1_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1_4">
+            <span class="md-nav__icon md-icon"></span>
+            Templates Directory
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../19_templates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Overview
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../20_base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Base
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../21_home/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../22_about/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    About
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../23_contact_us/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Contact Us
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../24_request_demo/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Request Demo
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../25_login/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Login
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../26_profile/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Profile
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../config/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    config
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    extensions
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../forms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    forms
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    models
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="file-analyze_report_aipy">File: <code>analyze_report_ai.py</code></h1>
+<p><strong>Purpose:</strong> This file defines the <code>GeminiReportAnalyzer</code> class, which leverages Google's Gemini AI model to analyze security reports (specifically PDFs), extract relevant information, mask Personally Identifiable Information (PII), and facilitate interactive chat regarding the report's content.</p>
+<p><strong>Overview:</strong></p>
+<p>The <code>analyze_report_ai.py</code> provides the following functionalities:</p>
+<ul>
+<li><strong>Gemini AI Integration:</strong> Establishes a connection with the Google Gemini AI model for report analysis and conversational interaction.</li>
+<li><strong>PDF Text Extraction:</strong> Extracts text from PDF reports.</li>
+<li><strong>PII Masking:</strong> Employs regular expressions to mask sensitive information within the extracted text before sending it to the AI model, safeguarding privacy.</li>
+<li><strong>Report Analysis:</strong> Utilizes the AI model to analyze the report and provide initial key insights.</li>
+<li><strong>Chat Interaction:</strong> Enables users to interact conversationally with the AI about the report's contents.</li>
+</ul>
+<p><strong>Key Components and Functionality:</strong></p>
+<ul>
+<li>
+<p><strong><code>GeminiReportAnalyzer</code> Class:</strong></p>
+<ul>
+<li>
+<p><strong><code>__init__(self, api_key=None)</code>:</strong> The constructor initializes the Gemini AI model.</p>
+<ul>
+<li>Retrieves the Gemini API key from the Flask application configuration or uses a provided key.</li>
+<li>Raises a <code>ValueError</code> if the API key is not set.</li>
+<li>Configures the Gemini AI model using the API key.</li>
+<li>Initializes the <code>model</code> and <code>chat</code> attributes.</li>
+</ul>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><span class="kn">import</span><span class="w"> </span><span class="nn">google.generativeai</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">genai</span>
+</span><span id="__span-0-2"><span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+</span><span id="__span-0-3"><span class="kn">from</span><span class="w"> </span><span class="nn">pypdf</span><span class="w"> </span><span class="kn">import</span> <span class="n">PdfReader</span>
+</span><span id="__span-0-4"><span class="kn">from</span><span class="w"> </span><span class="nn">flask</span><span class="w"> </span><span class="kn">import</span> <span class="n">current_app</span>
+</span><span id="__span-0-5"><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+</span><span id="__span-0-6">
+</span><span id="__span-0-7"><span class="k">class</span><span class="w"> </span><span class="nc">GeminiReportAnalyzer</span><span class="p">:</span>
+</span><span id="__span-0-8">    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">api_key</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+</span><span id="__span-0-9">        <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span> <span class="o">=</span> <span class="n">api_key</span> <span class="ow">or</span> <span class="n">current_app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;GEMINI_API_KEY&#39;</span><span class="p">)</span>
+</span><span id="__span-0-10">        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">api_key</span><span class="p">:</span>
+</span><span id="__span-0-11">            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;GEMINI_API_KEY is not set in configuration.&quot;</span><span class="p">)</span>
+</span><span id="__span-0-12">        <span class="n">genai</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">api_key</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">api_key</span><span class="p">)</span>
+</span><span id="__span-0-13">        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">genai</span><span class="o">.</span><span class="n">GenerativeModel</span><span class="p">(</span><span class="s2">&quot;gemini-1.5-flash&quot;</span><span class="p">)</span>  <span class="c1"># Use one model</span>
+</span><span id="__span-0-14">        <span class="bp">self</span><span class="o">.</span><span class="n">chat</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># To store the ongoing chat session</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong><code>extract_text_from_pdf(self, pdf_path)</code>:</strong> Extracts text content from a PDF file.</p>
+<ul>
+<li>Uses <code>PdfReader</code> from the <code>pypdf</code> library to read the PDF.</li>
+<li>Iterates over the pages and extracts text from each page.</li>
+<li>Returns the extracted text as a single string or <code>None</code> if extraction fails.</li>
+<li>Includes error handling for PDF processing.</li>
+</ul>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-1-1"><span class="kn">from</span><span class="w"> </span><span class="nn">pypdf</span><span class="w"> </span><span class="kn">import</span> <span class="n">PdfReader</span>
+</span><span id="__span-1-2">
+</span><span id="__span-1-3"><span class="k">def</span><span class="w"> </span><span class="nf">extract_text_from_pdf</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pdf_path</span><span class="p">):</span>
+</span><span id="__span-1-4">    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-1-5">        <span class="n">reader</span> <span class="o">=</span> <span class="n">PdfReader</span><span class="p">(</span><span class="n">pdf_path</span><span class="p">)</span>
+</span><span id="__span-1-6">        <span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">page</span><span class="o">.</span><span class="n">extract_text</span><span class="p">()</span> <span class="k">for</span> <span class="n">page</span> <span class="ow">in</span> <span class="n">reader</span><span class="o">.</span><span class="n">pages</span> <span class="k">if</span> <span class="n">page</span><span class="o">.</span><span class="n">extract_text</span><span class="p">()])</span>
+</span><span id="__span-1-7">        <span class="k">return</span> <span class="n">text</span> <span class="k">if</span> <span class="n">text</span> <span class="k">else</span> <span class="kc">None</span>
+</span><span id="__span-1-8"><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span><span id="__span-1-9">    <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;PDF Extraction Failed&quot;</span><span class="p">)</span>
+</span><span id="__span-1-10">    <span class="k">return</span> <span class="kc">None</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong><code>mask_pii(self, text)</code>:</strong> Masks Personally Identifiable Information (PII) from the extracted text before sending it to the Gemini AI model.  This method focuses on providing a good balance between accuracy and avoiding false positives while attempting to maintain document structure.</p>
+<ul>
+<li>Uses regular expressions (<code>re.sub</code>) to identify and replace email addresses, IP addresses, phone numbers, website URLs, and physical addresses with placeholder values.  The regex patterns are more complex to avoid common pitfalls.</li>
+</ul>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-2-1"><span class="kn">import</span><span class="w"> </span><span class="nn">re</span>
+</span><span id="__span-2-2">
+</span><span id="__span-2-3"><span class="k">def</span><span class="w"> </span><span class="nf">mask_pii</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+</span><span id="__span-2-4"><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="__span-2-5"><span class="sd">    Masks email addresses, phone numbers, IP addresses, physical addresses, and website URLs,</span>
+</span><span id="__span-2-6"><span class="sd">    while minimizing false positives and preserving report structure.</span>
+</span><span id="__span-2-7"><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="__span-2-8">
+</span><span id="__span-2-9">    <span class="c1"># 1. Email Addresses (Accurate Pattern)</span>
+</span><span id="__span-2-10">    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b&#39;</span><span class="p">,</span> <span class="s1">&#39;user@example.com&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</span><span id="__span-2-11">
+</span><span id="__span-2-12">    <span class="c1"># 2. IP Addresses (IPv4 and IPv6, Careful with CIDR Notation)</span>
+</span><span id="__span-2-13">    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.)</span><span class="si">{3}</span><span class="s1">(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?:/\d{1,2})?\b&#39;</span><span class="p">,</span> <span class="s1">&#39;127.0.0.1&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span> <span class="c1"># Includes optional CIDR notation</span>
+</span><span id="__span-2-14">    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;([0-9a-fA-F]{1,4}:)</span><span class="si">{7}</span><span class="s1">[0-9a-fA-F]{1,4}&#39;</span><span class="p">,</span> <span class="s1">&#39;2001:db8::1&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>  <span class="c1"># Basic IPv6</span>
+</span><span id="__span-2-15">    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;((([0-9a-fA-F]{1,4}:)</span><span class="si">{6}</span><span class="s1">:)|(([0-9a-fA-F]{1,4}:)</span><span class="si">{5}</span><span class="s1">:[0-9a-fA-F]{1,4})|(([0-9a-fA-F]{1,4}:)</span><span class="si">{4}</span><span class="s1">:([0-9a-fA-F]{1,4}:){1,2})|(([0-9a-fA-F]{1,4}:)</span><span class="si">{3}</span><span class="s1">:([0-9a-fA-F]{1,4}:){1,3})|(([0-9a-fA-F]{1,4}:)</span><span class="si">{2}</span><span class="s1">:([0-9a-fA-F]{1,4}:){1,4})|(([0-9a-fA-F]{1,4}:)</span><span class="si">{6}</span><span class="s1">(([0-9]|[1-9][0-9]|1[0-9]</span><span class="si">{2}</span><span class="s1">|2[0-4][0-9]|25[0-5])\.)</span><span class="si">{3}</span><span class="s1">([0-9]|[1-9][0-9]|1[0-9]</span><span class="si">{2}</span><span class="s1">|2[0-4][0-9]|25[0-5]))|(([0-9a-fA-F]{1,4}:)</span><span class="si">{5}</span><span class="s1">(([0-9]|[1-9][0-9]|1[0-9]</span><span class="si">{2}</span><span class="s1">|2[0-4][0-9]|25[0-5])\.)</span><span class="si">{3}</span><span class="s1">([0-9]|[1-9][0-9]|1[0-9]</span><span class="si">{2}</span><span class="s1">|2[0-4][0-9]|25[0-5]))|(([0-9a-fA-F]{1,4}:){1,2}:([0-9a-fA-F]{1,4}:){1,5}:((([0-9]|[1-9][0-9]|1[0-9]</span><span class="si">{2}</span><span class="s1">|2[0-4][0-9]|25[0-5])\.)</span><span class="si">{3}</span><span class="s1">([0-9]|[1-9][0-9]|1[0-9]</span><span class="si">{2}</span><span class="s1">|2[0-4][0-9]|25[0-5]))))\b&#39;</span><span class="p">,</span> <span class="s1">&#39;2001:db8::1&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span> <span class="c1"># More complete IPv6</span>
+</span><span id="__span-2-16">
+</span><span id="__span-2-17">    <span class="c1"># 3. Phone Numbers (More robust with various formats)</span>
+</span><span id="__span-2-18">    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\b(?:\+\d{1,3}[- ]?)?(?:\(\d{1,4}\)[- ]?)?(?:\d{1,4}[- ]?){1,3}\d{1,4}\b&#39;</span><span class="p">,</span> <span class="s1">&#39;+1-555-123-4567&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</span><span id="__span-2-19">
+</span><span id="__span-2-20">    <span class="c1"># 4. Website URLs (Handles http/https, www, and various TLDs)</span>
+</span><span id="__span-2-21">    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;(?:https?://)?(?:www\.)?([a-zA-Z0-9-]+(?:\.[a-zA-Z]{2,})+)(?:[/\w \.-]*)?&#39;</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;https://example.com&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>  <span class="c1"># Modified regex</span>
+</span><span id="__span-2-22">    <span class="c1"># The above preserves TLD</span>
+</span><span id="__span-2-23">
+</span><span id="__span-2-24">    <span class="c1"># 5. Physical Addresses (Simplified, requires context - still prone to errors)</span>
+</span><span id="__span-2-25">    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;\b\d+\s+[A-Za-z0-9\s]+\s+(?:St|Street|Ave|Avenue|Rd|Road|Dr|Drive).*&#39;</span><span class="p">,</span> <span class="s1">&#39;[REDACTED_ADDRESS]&#39;</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
+</span><span id="__span-2-26">
+</span><span id="__span-2-27">    <span class="k">return</span> <span class="n">text</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong><code>upload_pdf_and_analyze(self, pdf_path)</code>:</strong> Uploads a PDF file and triggers AI-powered analysis.</p>
+<ul>
+<li>Calls <code>extract_text_from_pdf()</code> to extract text from the PDF.</li>
+<li>Masks PII in the extracted text using <code>mask_pii()</code>.</li>
+<li>Constructs an initial prompt for the AI model, including the masked text.</li>
+<li>Starts a chat session using <code>self.model.start_chat()</code>.</li>
+<li>Sends the initial prompt to the AI model and retrieves the response.</li>
+<li>Returns the AI's analysis or an error message.</li>
+<li>It ensures to use the masked text for enhanced privacy.</li>
+</ul>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-3-1"><span class="k">def</span><span class="w"> </span><span class="nf">upload_pdf_and_analyze</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pdf_path</span><span class="p">):</span>
+</span><span id="__span-3-2">    <span class="n">extracted_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">extract_text_from_pdf</span><span class="p">(</span><span class="n">pdf_path</span><span class="p">)</span>
+</span><span id="__span-3-3">    <span class="k">if</span> <span class="ow">not</span> <span class="n">extracted_text</span><span class="p">:</span>
+</span><span id="__span-3-4">        <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;Failed to extract text from PDF&quot;</span><span class="p">}</span>
+</span><span id="__span-3-5">
+</span><span id="__span-3-6">    <span class="c1"># Mask PII before sending to Gemini</span>
+</span><span id="__span-3-7">    <span class="n">masked_text</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mask_pii</span><span class="p">(</span><span class="n">extracted_text</span><span class="p">)</span>
+</span><span id="__span-3-8">
+</span><span id="__span-3-9">    <span class="n">user_message</span> <span class="o">=</span> <span class="s2">&quot;Analyze this security scan report and provide key insights.&quot;</span>
+</span><span id="__span-3-10">    <span class="n">initial_prompt</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">user_message</span><span class="si">}</span><span class="se">\n\n</span><span class="si">{</span><span class="n">masked_text</span><span class="si">}</span><span class="s2">&quot;</span>  <span class="c1"># Use masked_text</span>
+</span><span id="__span-3-11">
+</span><span id="__span-3-12">    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-3-13">        <span class="bp">self</span><span class="o">.</span><span class="n">chat</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">start_chat</span><span class="p">(</span><span class="n">history</span><span class="o">=</span><span class="p">[{</span><span class="s2">&quot;role&quot;</span><span class="p">:</span> <span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="s2">&quot;parts&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">initial_prompt</span><span class="p">]}])</span>
+</span><span id="__span-3-14">
+</span><span id="__span-3-15">        <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">initial_prompt</span><span class="p">)</span>
+</span><span id="__span-3-16">
+</span><span id="__span-3-17">        <span class="k">return</span> <span class="p">{</span>
+</span><span id="__span-3-18">            <span class="s2">&quot;analysis&quot;</span><span class="p">:</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span> <span class="k">if</span> <span class="n">response</span> <span class="k">else</span> <span class="s2">&quot;No response received.&quot;</span>
+</span><span id="__span-3-19">        <span class="p">}</span>
+</span><span id="__span-3-20"><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span><span id="__span-3-21">    <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Gemini analysis failed.&quot;</span><span class="p">)</span>
+</span><span id="__span-3-22">    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;Gemini analysis failed&quot;</span><span class="p">,</span> <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)}</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+<li>
+<p><strong><code>continue_chat(self, user_message)</code>:</strong> Continues an existing chat session with the Gemini AI model.</p>
+<ul>
+<li>Checks if a chat session is active.</li>
+<li>Sends the user's message to the AI model and retrieves the response.</li>
+<li>Returns the AI's response or an error message.</li>
+</ul>
+<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-4-1"><span class="k">def</span><span class="w"> </span><span class="nf">continue_chat</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user_message</span><span class="p">):</span>
+</span><span id="__span-4-2">    <span class="k">try</span><span class="p">:</span>
+</span><span id="__span-4-3">        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">chat</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-4-4">            <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;No active chat session found. Please upload a PDF first.&quot;</span><span class="p">}</span>
+</span><span id="__span-4-5">
+</span><span id="__span-4-6">    <span class="n">response</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">chat</span><span class="o">.</span><span class="n">send_message</span><span class="p">(</span><span class="n">user_message</span><span class="p">)</span>
+</span><span id="__span-4-7">    <span class="n">assistant_response</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">text</span> <span class="k">if</span> <span class="n">response</span> <span class="k">else</span> <span class="s2">&quot;No response received.&quot;</span>
+</span><span id="__span-4-8">    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;analysis&quot;</span><span class="p">:</span> <span class="n">assistant_response</span><span class="p">}</span>
+</span><span id="__span-4-9"><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span><span id="__span-4-10">    <span class="n">logging</span><span class="o">.</span><span class="n">exception</span><span class="p">(</span><span class="s2">&quot;Gemini follow-up failed.&quot;</span><span class="p">)</span>
+</span><span id="__span-4-11">    <span class="k">return</span> <span class="p">{</span><span class="s2">&quot;error&quot;</span><span class="p">:</span> <span class="s2">&quot;Gemini follow-up failed&quot;</span><span class="p">,</span> <span class="s2">&quot;details&quot;</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)}</span>
+</span></code></pre></div></td></tr></table></div>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Dependencies:</strong></p>
+<ul>
+<li><code>google.generativeai</code>: For interacting with the Gemini AI model (<code>pip install google-generativeai</code>).</li>
+<li><code>pypdf</code>: For reading PDF files (<code>pip install pypdf</code>).</li>
+<li><code>flask</code>: For accessing the application configuration.</li>
+<li><code>logging</code>: For logging errors and debugging information.</li>
+<li><code>re</code>: For regular expressions used in PII masking.</li>
+</ul>
+<p><strong>Configuration:</strong></p>
+<ul>
+<li><strong><code>GEMINI_API_KEY</code>:</strong> The API key for accessing the Google Gemini AI model. This <em>must</em> be set in the Flask application configuration.</li>
+</ul>
+<p><strong>Security Considerations:</strong></p>
+<ul>
+<li><strong>API Key Security:</strong> The Gemini API key is a sensitive credential and should be stored securely. Avoid hardcoding the key and consider using environment variables or a secrets management system.</li>
+<li><strong>PII Masking:</strong> The <code>mask_pii()</code> function helps protect sensitive information by removing it from the text sent to the AI model. This is crucial for maintaining user privacy. The regular expressions used in <code>mask_pii()</code> should be regularly reviewed and updated to ensure they are effective and cover all relevant PII types. The existing implementation prioritizes accuracy and minimizing false positives but might not catch all possible PII variations. Consider using dedicated PII detection libraries for enhanced accuracy.</li>
+<li><strong>Data Sent to AI Model:</strong>  Be aware of the data being sent to the AI model. While PII masking is implemented, it's crucial to avoid sending any unnecessary sensitive information to the AI service.</li>
+<li><strong>Error Handling:</strong> The code includes error handling for various operations, such as PDF processing and API calls. Log all exceptions and errors to allow for debugging.</li>
+<li><strong>Rate Limiting and Cost:</strong>  Be mindful of Gemini's API usage costs and implement rate-limiting measures if necessary to prevent excessive usage. Refer to the Gemini API documentation for their specific rate limit policies. The current implementation does not include rate limiting.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy"], "search": "../assets/javascripts/workers/search.d50fe291.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.13a4f30d.min.js"></script>
+      
+    
+  </body>
+</html>
